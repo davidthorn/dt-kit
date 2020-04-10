@@ -31,4 +31,16 @@ open class CommonTableViewController<T: Hashable>: CommonViewController<T>, UITa
         fatalError("Method must be implemented by extending class")
     }
 
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        fatalError("Method must be implemented by extending class")
+    }
+
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        fatalError("Method must be implemented by extending class")
+    }
+
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        fatalError("Method must be implemented by extending class")
+    }
+
 }
