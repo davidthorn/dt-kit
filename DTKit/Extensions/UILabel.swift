@@ -17,4 +17,72 @@ public extension UILabel {
         attributedText = text.with(attributes: attributes)
     }
 
+    /// Creates a UILabel with the text property set to that of the defaultText
+    /// - Parameter defaultText: The value that sets the text property of the label
+    convenience init(defaultText: String) {
+        self.init()
+        text = defaultText
+        attributedText = nil
+    }
+
+    /// Creates a UILabel with the attributedText property set to that of the defaultAttributed
+    /// - Parameter defaultAttributedString: The value that sets the attributedText property of the label
+    convenience init(defaultAttributedString: NSAttributedString) {
+        self.init()
+        text = nil
+        attributedText = defaultAttributedString
+    }
+
+    /// Creates a left aligned UILabel using the text
+    /// - Parameter text: The text that will set the UILabels text property.
+    static func leftAligned(with text: String) -> UILabel {
+        aligned(with: text, alignment: .left)
+    }
+
+    /// Creates a right aligned UILabel using the text
+    /// - Parameter text: The text that will set the UILabels text property.
+    static func rightAligned(with text: String) -> UILabel {
+        aligned(with: text, alignment: .right)
+    }
+
+    /// Creates a center aligned UILabel using the text
+    /// - Parameter text: The text that will set the UILabels text property.
+    static func centerAligned(with text: String) -> UILabel {
+        aligned(with: text, alignment: .center)
+    }
+
+    /// Creates a left aligned UILabel using the attributedString
+    /// - Parameter attributedString: The attributedString that will set the UILabels attributedText property.
+    static func leftAligned(with attributedString: NSAttributedString) -> UILabel {
+        aligned(with: attributedString, alignment: .left)
+    }
+
+    /// Creates a right aligned UILabel using the attributedString
+    /// - Parameter attributedString: The attributedString that will set the UILabels attributedText property.
+    static func rightAligned(with attributedString: NSAttributedString) -> UILabel {
+        aligned(with: attributedString, alignment: .right)
+    }
+
+    /// Creates a center aligned UILabel using the attributedString
+    /// - Parameter attributedString: The attributedString that will set the UILabels attributedText property.
+    static func centerAligned(with attributedString: NSAttributedString) -> UILabel {
+        aligned(with: attributedString, alignment: .center)
+    }
+
+    /// Creates an aligned UILabel using the alignment provided
+    /// - Parameter text: The text that will set the UILabels text property.
+    static func aligned(with text: String, alignment: NSTextAlignment) -> UILabel {
+        let label = UILabel(defaultText: text)
+        label.textAlignment = alignment
+        return label
+    }
+
+    /// Creates an aligned UILabel using the alignment provided
+    /// - Parameter attributedString: The text that will set the UILabels text property.
+    static func aligned(with attributedString: NSAttributedString, alignment: NSTextAlignment) -> UILabel {
+        let label = UILabel(defaultAttributedString: attributedString)
+        label.textAlignment = alignment
+        return label
+    }
+
 }
