@@ -8,19 +8,6 @@
 
 import UIKit
 
-public extension Optional where Wrapped: Any {
-    var isNil: Bool {
-        switch self {
-        case .none: return true
-        default: return false
-        }
-    }
-    
-    var isNotNil: Bool {
-        return !isNil
-    }
-}
-
 public extension UIView {
     
     func addSubview(_ view: UIView, edges: [UIRectEdge] = []) {
