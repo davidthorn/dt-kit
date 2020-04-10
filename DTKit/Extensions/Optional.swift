@@ -23,3 +23,20 @@ public extension Optional where Wrapped: AnyObject {
     }
 
 }
+
+public extension Optional where Wrapped: Any {
+
+    var isNil: Bool {
+        switch self {
+        case .none:
+            return true
+        default:
+            return false
+        }
+    }
+
+    var isNotNil: Bool {
+        return !isNil
+    }
+
+}
