@@ -16,7 +16,9 @@ public extension UIView {
         translatesAutoresizingMaskIntoConstraints = false
         return self
     }
-    
+
+    /// Pins the horizontal and vertical edges to the views superview.
+    /// - Parameter insets: Sets the constant / offset property of the constraint.
     func edgesToSuperview(insets: UIEdgeInsets = .zero) {
         pinHorizontal(insets: insets)
         pinVertical(insets: insets)
@@ -77,17 +79,26 @@ public extension UIView {
             leftAnchor.constraint(equalTo: parentView.leftAnchor, constant: constant)
             ])
     }
-    
+
+    /// Constrains the views trailing and leading anchor to that of its parents using the insets as constants.
+    /// - Parameter insets:  Left and right property are used as the insets.
     func pinHorizontal(insets: UIEdgeInsets = .zero) {
         pinTrailing(constant: -abs(insets.right))
         pinLeading(constant: insets.left)
     }
-    
+
+    /// Constrains the views top and bottom anchor to that of its parents using the insets as constants.
+    /// - Parameter insets: Top and bottom property are used as the insets.
     func pinVertical(insets: UIEdgeInsets = .zero) {
         pinTop(constant: insets.top)
         pinBottom(constant: -abs(insets.bottom))
     }
-    
+
+    /// Sets the views trailing anchor to that of it views leading or trailing anchor based upon the edge provided.
+    /// - Parameters:
+    ///   - view: The view that this views anchor will be constraint to.
+    ///   - edge: Either left or right will be used to determine that edge of the view that should be used.
+    ///   - constant: The constant 
     func pinTrailing(view: UIView, edge: UIRectEdge = .left, constant: CGFloat = 0) {
         
         translatesAutoresizingMaskIntoConstraints = false
