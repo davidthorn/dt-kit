@@ -13,5 +13,11 @@ public extension UIEdgeInsets {
     init(horizontal: CGFloat, vertical: CGFloat) {
         self.init(top: vertical, left: horizontal, bottom: vertical, right: horizontal)
     }
+
+    /// Returns UIEdgeInsets object witin only the left and right properties set to that of the constant.
+    /// - Parameter constant: The constant that is used for the left and right property.
+    static func horizontal(constant: CGFloat) -> UIEdgeInsets {
+        .init(horizontal: constant, vertical: 0)
+    }
     
 }

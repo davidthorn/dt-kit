@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "DTKit"
-s.version      = "0.2.1"
+s.version      = "0.2.2"
 s.summary      = "A summary of your framework"
 s.description  = <<-DESC
     A framework providing custom implemenations of UIKit and helper extensions.
