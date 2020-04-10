@@ -9,7 +9,11 @@
 import UIKit
 
 public extension UIEdgeInsets {
-    
+
+    /// Creates a UIEdgeInsets using the horizontal values as left / right and the vertical for top / bottom,
+    /// - Parameters:
+    ///   - horizontal: The value used for left and right
+    ///   - vertical: The value used for top and bottom
     init(horizontal: CGFloat, vertical: CGFloat) {
         self.init(top: vertical, left: horizontal, bottom: vertical, right: horizontal)
     }
