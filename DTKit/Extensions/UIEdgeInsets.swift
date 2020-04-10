@@ -23,5 +23,11 @@ public extension UIEdgeInsets {
     static func horizontal(constant: CGFloat) -> UIEdgeInsets {
         .init(horizontal: constant, vertical: 0)
     }
+
+    /// Default constructor to set all sides to the same value.
+    /// - Parameter value: Value used for all insets
+    init(value: CGFloat) {
+        self.init(top: value, left: value, bottom: value, right: value)
+    }
     
 }
