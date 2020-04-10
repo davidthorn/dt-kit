@@ -6,7 +6,6 @@
 //  Copyright © 2020 David Thorn. All rights reserved.
 //
 
-
 import UIKit
 
 public typealias LabelledInfoIconHandler = () -> Void

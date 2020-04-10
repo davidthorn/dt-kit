@@ -9,7 +9,8 @@
 import UIKit
 
 public final class CTAButton: UIButton {
-    var edgeInsets: UIEdgeInsets { return .init(horizontal: 15, vertical: 5) }
+
+    public var edgeInsets: UIEdgeInsets { return .init(horizontal: 15, vertical: 5) }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
