@@ -22,14 +22,14 @@
 		9367C1DC243FFAC7001D4E59 /* InputFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367C1D0243FFAC7001D4E59 /* InputFieldViewModel.swift */; };
 		9367C1DD243FFAC7001D4E59 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367C1D1243FFAC7001D4E59 /* InputField.swift */; };
 		9367C1DE243FFAC7001D4E59 /* InputFieldViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367C1D2243FFAC7001D4E59 /* InputFieldViewModelProtocol.swift */; };
-		9367C1E3243FFC51001D4E59 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367C1E0243FFC51001D4E59 /* UIView.swift */; };
-		9367C1E4243FFC51001D4E59 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367C1E1243FFC51001D4E59 /* Array.swift */; };
-		9367C1E5243FFC51001D4E59 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367C1E2243FFC51001D4E59 /* UIEdgeInsets.swift */; };
-		9367C1E8243FFC59001D4E59 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367C1E7243FFC59001D4E59 /* Constraint.swift */; };
 		9367C1EA243FFC67001D4E59 /* CTAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367C1E9243FFC67001D4E59 /* CTAButton.swift */; };
 		9367C1ED243FFC97001D4E59 /* LabellSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367C1EC243FFC97001D4E59 /* LabellSwitchView.swift */; };
 		9367C1EF243FFCA1001D4E59 /* LabelledInfoIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367C1EE243FFCA1001D4E59 /* LabelledInfoIcon.swift */; };
 		9367C1F1243FFE87001D4E59 /* DTKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 9367C1F0243FFE87001D4E59 /* DTKit.podspec */; };
+		9367C1F6244001E3001D4E59 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367C1F3244001E3001D4E59 /* UIView.swift */; };
+		9367C1F7244001E3001D4E59 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367C1F4244001E3001D4E59 /* Array.swift */; };
+		9367C1F8244001E3001D4E59 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367C1F5244001E3001D4E59 /* UIEdgeInsets.swift */; };
+		9367C1FB244001FB001D4E59 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367C1FA244001FB001D4E59 /* Constraint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,14 +61,14 @@
 		9367C1D0243FFAC7001D4E59 /* InputFieldViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputFieldViewModel.swift; sourceTree = "<group>"; };
 		9367C1D1243FFAC7001D4E59 /* InputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		9367C1D2243FFAC7001D4E59 /* InputFieldViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputFieldViewModelProtocol.swift; sourceTree = "<group>"; };
-		9367C1E0243FFC51001D4E59 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		9367C1E1243FFC51001D4E59 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		9367C1E2243FFC51001D4E59 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
-		9367C1E7243FFC59001D4E59 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		9367C1E9243FFC67001D4E59 /* CTAButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTAButton.swift; sourceTree = "<group>"; };
 		9367C1EC243FFC97001D4E59 /* LabellSwitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabellSwitchView.swift; sourceTree = "<group>"; };
 		9367C1EE243FFCA1001D4E59 /* LabelledInfoIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelledInfoIcon.swift; sourceTree = "<group>"; };
 		9367C1F0243FFE87001D4E59 /* DTKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = DTKit.podspec; sourceTree = "<group>"; };
+		9367C1F3244001E3001D4E59 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		9367C1F4244001E3001D4E59 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		9367C1F5244001E3001D4E59 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
+		9367C1FA244001FB001D4E59 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +112,9 @@
 		9367C1AB243FFA49001D4E59 /* DTKit */ = {
 			isa = PBXGroup;
 			children = (
+				9367C1F9244001FB001D4E59 /* Utils */,
+				9367C1F2244001E3001D4E59 /* Extensions */,
 				9367C1EB243FFC7B001D4E59 /* Buttons */,
-				9367C1E6243FFC59001D4E59 /* Utils */,
-				9367C1DF243FFC51001D4E59 /* Extensions */,
 				9367C1C3243FFAC7001D4E59 /* Common */,
 				9367C1CB243FFAC7001D4E59 /* FormButton */,
 				9367C1CF243FFAC7001D4E59 /* InputField */,
@@ -176,32 +176,30 @@
 			path = InputField;
 			sourceTree = "<group>";
 		};
-		9367C1DF243FFC51001D4E59 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				9367C1E0243FFC51001D4E59 /* UIView.swift */,
-				9367C1E1243FFC51001D4E59 /* Array.swift */,
-				9367C1E2243FFC51001D4E59 /* UIEdgeInsets.swift */,
-			);
-			name = Extensions;
-			path = "../../../SwiftBaseProject-/Core/Extensions";
-			sourceTree = "<group>";
-		};
-		9367C1E6243FFC59001D4E59 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				9367C1E7243FFC59001D4E59 /* Constraint.swift */,
-			);
-			name = Utils;
-			path = "../../../SwiftBaseProject-/Core/Utils";
-			sourceTree = "<group>";
-		};
 		9367C1EB243FFC7B001D4E59 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
 				9367C1E9243FFC67001D4E59 /* CTAButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		9367C1F2244001E3001D4E59 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9367C1F3244001E3001D4E59 /* UIView.swift */,
+				9367C1F4244001E3001D4E59 /* Array.swift */,
+				9367C1F5244001E3001D4E59 /* UIEdgeInsets.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9367C1F9244001FB001D4E59 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9367C1FA244001FB001D4E59 /* Constraint.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,8 +312,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9367C1E8243FFC59001D4E59 /* Constraint.swift in Sources */,
-				9367C1E3243FFC51001D4E59 /* UIView.swift in Sources */,
 				9367C1D5243FFAC7001D4E59 /* CommonTextField.swift in Sources */,
 				9367C1DD243FFAC7001D4E59 /* InputField.swift in Sources */,
 				9367C1D8243FFAC7001D4E59 /* BorderCommonView.swift in Sources */,
@@ -324,15 +320,17 @@
 				9367C1ED243FFC97001D4E59 /* LabellSwitchView.swift in Sources */,
 				9367C1DB243FFAC7001D4E59 /* FormButtonViewModel.swift in Sources */,
 				9367C1D6243FFAC7001D4E59 /* CommonTextFieldViewModelProtocol.swift in Sources */,
+				9367C1F7244001E3001D4E59 /* Array.swift in Sources */,
 				9367C1DA243FFAC7001D4E59 /* FormButton.swift in Sources */,
 				9367C1D7243FFAC7001D4E59 /* CommonControl.swift in Sources */,
 				9367C1DC243FFAC7001D4E59 /* InputFieldViewModel.swift in Sources */,
-				9367C1E4243FFC51001D4E59 /* Array.swift in Sources */,
 				9367C1D3243FFAC7001D4E59 /* CommonView.swift in Sources */,
-				9367C1E5243FFC51001D4E59 /* UIEdgeInsets.swift in Sources */,
+				9367C1F6244001E3001D4E59 /* UIView.swift in Sources */,
 				9367C1D4243FFAC7001D4E59 /* CommonTextFieldViewModel.swift in Sources */,
 				9367C1DE243FFAC7001D4E59 /* InputFieldViewModelProtocol.swift in Sources */,
 				9367C1D9243FFAC7001D4E59 /* FormButtonViewModelProtocol.swift in Sources */,
+				9367C1FB244001FB001D4E59 /* Constraint.swift in Sources */,
+				9367C1F8244001E3001D4E59 /* UIEdgeInsets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
