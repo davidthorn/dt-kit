@@ -76,7 +76,7 @@
 		9367C1E9243FFC67001D4E59 /* CTAButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTAButton.swift; sourceTree = "<group>"; };
 		9367C1EC243FFC97001D4E59 /* LabellSwitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabellSwitchView.swift; sourceTree = "<group>"; };
 		9367C1EE243FFCA1001D4E59 /* LabelledInfoIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelledInfoIcon.swift; sourceTree = "<group>"; };
-		9367C1F0243FFE87001D4E59 /* DTKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = DTKit.podspec; sourceTree = "<group>"; };
+		9367C1F0243FFE87001D4E59 /* DTKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = DTKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9367C1F3244001E3001D4E59 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		9367C1F4244001E3001D4E59 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		9367C1F5244001E3001D4E59 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
