@@ -9,7 +9,8 @@
 import UIKit
 
 public extension UIView {
-    
+
+    @discardableResult
     func constrain() -> Self? {
         guard superview.isNotNil else { return nil }
         
@@ -134,7 +135,8 @@ public extension UIView {
         }
         
     }
-    
+
+    @discardableResult
     func width(constant: CGFloat) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
         let constraint = widthAnchor.constraint(equalToConstant: constant)
@@ -143,7 +145,8 @@ public extension UIView {
             ])
         return constraint
     }
-    
+
+    @discardableResult
     func height(constant: CGFloat) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
         let constraint = heightAnchor.constraint(equalToConstant: constant)
