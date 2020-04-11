@@ -30,23 +30,32 @@ public extension UIView {
         
         NSLayoutConstraint.activate([
             topAnchor.constraint(equalTo: parentView.topAnchor, constant: constant)
-            ])
+        ])
     }
-    
+
+    func pinTop(lessThanOrEqualTo: CGFloat = 0) {
+        guard let parentView = constrain()?.superview else { fatalError("View has not been added to parent") }
+
+        NSLayoutConstraint.activate([
+            topAnchor.constraint(lessThanOrEqualTo: parentView.layoutMarginsGuide.topAnchor, constant: lessThanOrEqualTo)
+        ])
+    }
+
     func pinBottom(constant: CGFloat = 0) {
         guard let parentView = constrain()?.superview else { fatalError("View has not been added to parent") }
         
         NSLayoutConstraint.activate([
             bottomAnchor.constraint(equalTo: parentView.bottomAnchor, constant: -abs(constant))
-            ])
+        ])
     }
     
     func pinBottom(lessThanOrEqualTo: CGFloat = 0) {
         guard let parentView = constrain()?.superview else { fatalError("View has not been added to parent") }
         
         NSLayoutConstraint.activate([
-            bottomAnchor.constraint(lessThanOrEqualTo: parentView.bottomAnchor, constant: lessThanOrEqualTo)
-            ])
+            bottomAnchor.constraint(lessThanOrEqualTo: parentView.bottomAnchor,
+                                    constant: -abs(lessThanOrEqualTo))
+        ])
     }
     
     func pinTrailing(constant: CGFloat = 0) {
@@ -54,7 +63,7 @@ public extension UIView {
         
         NSLayoutConstraint.activate([
             rightAnchor.constraint(equalTo: parentView.rightAnchor, constant: -abs(constant))
-            ])
+        ])
     }
     
     func pinTrailing(greaterThanOrEqualTo: CGFloat = 0) {
@@ -62,7 +71,7 @@ public extension UIView {
         
         NSLayoutConstraint.activate([
             rightAnchor.constraint(greaterThanOrEqualTo: parentView.rightAnchor, constant: -abs(greaterThanOrEqualTo))
-            ])
+        ])
     }
     
     func pinTrailing(lessThanOrEqualTo: CGFloat = 0) {
@@ -70,7 +79,7 @@ public extension UIView {
         
         NSLayoutConstraint.activate([
             rightAnchor.constraint(lessThanOrEqualTo: parentView.rightAnchor, constant: -abs(lessThanOrEqualTo))
-            ])
+        ])
     }
     
     func pinLeading(constant: CGFloat = 0) {
@@ -78,7 +87,7 @@ public extension UIView {
         
         NSLayoutConstraint.activate([
             leftAnchor.constraint(equalTo: parentView.leftAnchor, constant: constant)
-            ])
+        ])
     }
 
     /// Constrains the views trailing and leading anchor to that of its parents using the insets as constants.
@@ -103,16 +112,16 @@ public extension UIView {
     func pinTrailing(view: UIView, edge: UIRectEdge = .left, constant: CGFloat = 0) {
         
         translatesAutoresizingMaskIntoConstraints = false
-        
+
         switch edge {
         case .right:
             NSLayoutConstraint.activate([
                 rightAnchor.constraint(equalTo: view.rightAnchor, constant: constant)
-                ])
+            ])
         case .left:
             NSLayoutConstraint.activate([
                 rightAnchor.constraint(equalTo: view.leftAnchor, constant: constant)
-                ])
+            ])
         default: break
         }
         
@@ -126,11 +135,11 @@ public extension UIView {
         case .right:
             NSLayoutConstraint.activate([
                 leftAnchor.constraint(equalTo: view.rightAnchor, constant: constant)
-                ])
+            ])
         case .left:
             NSLayoutConstraint.activate([
                 leftAnchor.constraint(equalTo: view.leftAnchor, constant: constant)
-                ])
+            ])
         default: break
         }
         
@@ -142,8 +151,19 @@ public extension UIView {
         let constraint = widthAnchor.constraint(equalToConstant: constant)
         NSLayoutConstraint.activate([
             constraint
-            ])
+        ])
         return constraint
+    }
+
+    @discardableResult
+    func width(view: UIView, multiplier: CGFloat = 1) -> NSLayoutConstraint {
+        constrain()
+        let widthConstraint = widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: multiplier)
+        widthConstraint.priority = .required
+        NSLayoutConstraint.activate([
+            widthConstraint
+        ])
+        return widthConstraint
     }
 
     @discardableResult
@@ -152,8 +172,19 @@ public extension UIView {
         let constraint = heightAnchor.constraint(equalToConstant: constant)
         NSLayoutConstraint.activate([
             constraint
-            ])
+        ])
         return constraint
+    }
+
+    @discardableResult
+    func height(view: UIView, multiplier: CGFloat = 1) -> NSLayoutConstraint {
+        constrain()
+        let heightConstraint = heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: multiplier)
+        heightConstraint.priority = .required
+        NSLayoutConstraint.activate([
+            heightConstraint
+        ])
+        return heightConstraint
     }
     
     func pinTop(view: UIView, edge: UIRectEdge = .bottom, constant: CGFloat = 0) {
@@ -163,14 +194,23 @@ public extension UIView {
         switch edge {
         case .top:
             NSLayoutConstraint.activate([
-                topAnchor.constraint(equalTo: view.topAnchor, constant: constant)
-                ])
+                topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: constant)
+            ])
         case .bottom:
             NSLayoutConstraint.activate([
                 topAnchor.constraint(equalTo: view.bottomAnchor, constant: constant)
-                ])
+            ])
         default: break
         }
         
+    }
+
+    func center(insets: UIEdgeInsets) {
+        guard let parentView = constrain()?.superview else { fatalError("View has not been added to parent") }
+        
+        NSLayoutConstraint.activate([
+            centerXAnchor.constraint(equalTo: parentView.centerXAnchor, constant: insets.left),
+            centerYAnchor.constraint(equalTo: parentView.centerYAnchor, constant: insets.top)
+        ])
     }
 }
