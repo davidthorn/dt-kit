@@ -14,13 +14,13 @@ public struct CommonTextFieldViewModel: CommonTextFieldViewModelProtocol & Hasha
     public var value: String?
     public var isSecure: Bool
     public var placeholder: NSAttributedString
-    public var textDidChange: (String?, CommonTextFieldViewModelProtocol) -> Void
+    public var textDidChange: CommonTextFieldEventHandler
 
     public init(identifier: String,
                 value: String?,
                 isSecure: Bool,
                 placeholder: NSAttributedString,
-                textDidChange: @escaping (String?, CommonTextFieldViewModelProtocol) -> Void) {
+                textDidChange: @escaping CommonTextFieldEventHandler) {
 
         self.identifier = identifier
         self.value = value

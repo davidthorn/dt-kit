@@ -31,13 +31,28 @@ public final class CommonTextField<T: Hashable & CommonTextFieldViewModelProtoco
         self.viewModel = viewModel
         isSecureTextEntry = viewModel.isSecure
         attributedPlaceholder = viewModel.placeholder
-        addTarget(self, action: #selector(textFieldValueChange), for: .editingChanged)
+        addTarget(self, action: #selector(textFieldEditingDidBegin), for: .editingDidBegin)
+        addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
+        addTarget(self, action: #selector(textFieldEditingDidEndOnExit), for: .editingDidEndOnExit)
+
     }
 
-    @objc private func textFieldValueChange(field: UITextField) {
+    @objc private func textFieldEditingDidBegin(sender: UITextField) {
+        handle(event: .editingDidBegin)
+    }
+
+    @objc private func textFieldEditingChanged(sender: UITextField) {
+        handle(event: .editingChanged)
+    }
+
+    @objc private func textFieldEditingDidEndOnExit(sender: UITextField) {
+        handle(event: .editingDidEndOnExit)
+    }
+
+    private func handle(event: UIControl.Event) {
         guard let viewModel = viewModel else { return }
-        
-        viewModel.textDidChange(field.text, viewModel)
+
+        viewModel.textDidChange(text, viewModel, event)
     }
 
 }

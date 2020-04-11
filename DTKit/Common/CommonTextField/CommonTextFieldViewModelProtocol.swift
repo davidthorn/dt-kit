@@ -8,16 +8,18 @@
 
 import Foundation
 
+public typealias CommonTextFieldEventHandler = (String?, CommonTextFieldViewModelProtocol, UIControl.Event) -> Void
+
 public protocol CommonTextFieldViewModelProtocol {
     var identifier: String { get }
     var value: String? { get }
     var isSecure: Bool { get }
     var placeholder: NSAttributedString { get }
-    var textDidChange: (_ value: String?, _ viewModel: CommonTextFieldViewModelProtocol) -> Void { get set }
+    var textDidChange: CommonTextFieldEventHandler { get set }
 
     init(identifier: String,
          value: String?,
          isSecure: Bool,
          placeholder: NSAttributedString,
-         textDidChange: @escaping (_ value: String?, _ viewModel: CommonTextFieldViewModelProtocol) -> Void)
+         textDidChange: @escaping CommonTextFieldEventHandler)
 }
