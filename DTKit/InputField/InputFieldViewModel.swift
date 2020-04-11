@@ -8,13 +8,15 @@
 
 import Foundation
 
-public struct InputFieldViewModel<T: Hashable & CommonTextFieldViewModelProtocol>: InputFieldViewModelProtocol, Hashable {
+public class InputFieldViewModel<T: Hashable & CommonTextFieldViewModelProtocol>: InputFieldViewModelProtocol, Hashable {
 
     public typealias TextFieldViewModel = T
 
     public var identifier: String
     public var labelText: NSAttributedString
     public var textFieldViewModel: TextFieldViewModel
+    public var shouldBecomeFirstResponder: () -> Void = { }
+    public var shouldResignFirstResponder: () -> Void = { }
 
     public init(identifier: String, labelText: NSAttributedString, textFieldViewModel: TextFieldViewModel) {
         self.identifier = identifier

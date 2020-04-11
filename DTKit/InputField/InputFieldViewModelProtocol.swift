@@ -13,4 +13,6 @@ public protocol InputFieldViewModelProtocol {
     var identifier: String { get }
     var labelText: NSAttributedString { get }
     var textFieldViewModel: TextFieldViewModel { get }
+    var shouldBecomeFirstResponder: () -> Void { get set }
+    var shouldResignFirstResponder: () -> Void { get set }
 }

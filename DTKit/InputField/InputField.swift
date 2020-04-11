@@ -32,7 +32,7 @@ final class InputField<T: Hashable & InputFieldViewModelProtocol>: CommonView {
         stackView.addArrangedSubview(textFieldWrapper)
         addSubview(stackView)
         applyConstraints()
-    }
+}
 
     public func setup(viewModel: ViewModel) {
         guard viewModel != self.viewModel else { return }
@@ -41,6 +41,16 @@ final class InputField<T: Hashable & InputFieldViewModelProtocol>: CommonView {
 
         label.attributedText = viewModel.labelText
         textField.setup(viewModel: viewModel.textFieldViewModel)
+
+        self.viewModel?.shouldBecomeFirstResponder = {
+            self.textField.becomeFirstResponder()
+        }
+
+        self.viewModel?.shouldResignFirstResponder =  { [weak self] in
+            self?.textField.resignFirstResponder()
+        }
+
+        textField.returnKeyType = .next
     }
 
     private func applyConstraints() {
