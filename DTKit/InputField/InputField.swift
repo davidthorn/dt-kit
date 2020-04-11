@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class InputField<T: Hashable & InputFieldViewModelProtocol>: CommonView {
+public final class InputField<T: Hashable & InputFieldViewModelProtocol>: CommonView {
 
     public typealias ViewModel = T
 
@@ -18,7 +18,12 @@ final class InputField<T: Hashable & InputFieldViewModelProtocol>: CommonView {
     private let stackView = UIStackView()
     private var viewModel: ViewModel?
 
-    override func commonInit() {
+    public var keyboardType: UIKeyboardType {
+        get { textField.keyboardType }
+        set { textField.keyboardType = newValue }
+    }
+
+    override public func commonInit() {
         super.commonInit()
         
         label.setContentHuggingPriority(.required, for: .vertical)
