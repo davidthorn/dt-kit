@@ -74,3 +74,34 @@ public struct FieldInfo {
                                                         isSecure: isSecure))
     }
 }
+
+public extension FieldInfo {
+
+    static func email(value: String?) -> FieldInfo {
+        FieldInfo(identifier: FormFieldName.email,
+                  type: .email(value: value))
+    }
+
+    static func password(value: String?) -> FieldInfo {
+        FieldInfo(identifier: FormFieldName.password,
+                  type: .password(value: value,
+                                  confirmation: true))
+    }
+
+    static func passwordConfirmation(value: String?) -> FieldInfo {
+        FieldInfo(identifier: FormFieldName.passwordConfirmation,
+                  type: .password(value: value,
+                                  confirmation: true))
+    }
+
+}
+
+public extension Array where Element == FieldInfo {
+
+    var formFields: [FormField] {
+        self.map { info in
+            FormField(identifier: info.identifier, type: info.type)
+        }
+    }
+
+}
