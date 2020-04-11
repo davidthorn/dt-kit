@@ -15,4 +15,9 @@ public extension String {
         return .init(string: self, attributes: attributes)
     }
 
+    /// Returns an attributed string with no attributes
+    var attributed: NSAttributedString {
+        with(attributes: [:])
+    }
+
 }
