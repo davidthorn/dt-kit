@@ -20,6 +20,6 @@ open class CommonView: UIView {
         commonInit()
     }
 
-    func commonInit() { }
+    open func commonInit() { }
 
 }

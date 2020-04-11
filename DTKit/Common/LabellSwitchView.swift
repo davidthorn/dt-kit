@@ -24,7 +24,7 @@ public final class LabelledSwitchView: CommonView {
         changeHandler = onChangeHandler
     }
     
-    override func commonInit() {
+    override public func commonInit() {
         super.commonInit()
 
         addSubview(label)

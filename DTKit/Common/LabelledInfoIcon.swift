@@ -33,7 +33,7 @@ public final class LabelledInfoIcon: CommonView {
         }
     }
     
-    override func commonInit() {
+    override public func commonInit() {
         super.commonInit()
 
         addSubview(label)
