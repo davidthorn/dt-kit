@@ -50,6 +50,10 @@
 		93D2A9102441C6F7001D1548 /* RepresentalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2A90F2441C6F7001D1548 /* RepresentalFactory.swift */; };
 		93D2A9122441C718001D1548 /* RepresentationalSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2A9112441C718001D1548 /* RepresentationalSection.swift */; };
 		93D2A9152441C757001D1548 /* InputFieldRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2A9142441C757001D1548 /* InputFieldRepresentation.swift */; };
+		93DD31852441CF3A00431521 /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DD31842441CF3A00431521 /* FormField.swift */; };
+		93DD31892441D2B000431521 /* FormField.Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DD31882441D2B000431521 /* FormField.Email.swift */; };
+		93DD318B2441D3F300431521 /* FormField.custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DD318A2441D3F300431521 /* FormField.custom.swift */; };
+		93DD318D2441D70100431521 /* FormFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DD318C2441D70100431521 /* FormFieldType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +113,10 @@
 		93D2A90F2441C6F7001D1548 /* RepresentalFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentalFactory.swift; sourceTree = "<group>"; };
 		93D2A9112441C718001D1548 /* RepresentationalSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentationalSection.swift; sourceTree = "<group>"; };
 		93D2A9142441C757001D1548 /* InputFieldRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldRepresentation.swift; sourceTree = "<group>"; };
+		93DD31842441CF3A00431521 /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
+		93DD31882441D2B000431521 /* FormField.Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.Email.swift; sourceTree = "<group>"; };
+		93DD318A2441D3F300431521 /* FormField.custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.custom.swift; sourceTree = "<group>"; };
+		93DD318C2441D70100431521 /* FormFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFieldType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,9 +329,21 @@
 		93D2A9132441C745001D1548 /* Representations */ = {
 			isa = PBXGroup;
 			children = (
+				93DD31872441D2A300431521 /* Fields */,
 				93D2A9142441C757001D1548 /* InputFieldRepresentation.swift */,
+				93DD31842441CF3A00431521 /* FormField.swift */,
+				93DD318C2441D70100431521 /* FormFieldType.swift */,
 			);
 			path = Representations;
+			sourceTree = "<group>";
+		};
+		93DD31872441D2A300431521 /* Fields */ = {
+			isa = PBXGroup;
+			children = (
+				93DD31882441D2B000431521 /* FormField.Email.swift */,
+				93DD318A2441D3F300431521 /* FormField.custom.swift */,
+			);
+			path = Fields;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,12 +460,15 @@
 				93D2A8E02440AC18001D1548 /* RepresentableViewController.swift in Sources */,
 				93D2A8DC2440AC18001D1548 /* RepresentableViewModelProtocol.swift in Sources */,
 				93D2A8CF2440ABD9001D1548 /* Optional.swift in Sources */,
+				93DD318B2441D3F300431521 /* FormField.custom.swift in Sources */,
+				93DD318D2441D70100431521 /* FormFieldType.swift in Sources */,
 				93D2A9062441B53F001D1548 /* IdentifableHeaderSection.swift in Sources */,
 				9367C1DD243FFAC7001D4E59 /* InputField.swift in Sources */,
 				9367C1D8243FFAC7001D4E59 /* BorderCommonView.swift in Sources */,
 				93D2A8DB2440AC18001D1548 /* CommonTableViewController.swift in Sources */,
 				93D2A90E2441C6D4001D1548 /* RepresentationalItem.swift in Sources */,
 				9367C1EA243FFC67001D4E59 /* CTAButton.swift in Sources */,
+				93DD31852441CF3A00431521 /* FormField.swift in Sources */,
 				9367C1EF243FFCA1001D4E59 /* LabelledInfoIcon.swift in Sources */,
 				9367C1ED243FFC97001D4E59 /* LabellSwitchView.swift in Sources */,
 				93D2A8E22440AC18001D1548 /* RepresentableSectionProtocol.swift in Sources */,
@@ -460,6 +483,7 @@
 				9367C1DA243FFAC7001D4E59 /* FormButton.swift in Sources */,
 				93D2A8CD2440ABD9001D1548 /* UILabel.swift in Sources */,
 				9367C1D7243FFAC7001D4E59 /* CommonControl.swift in Sources */,
+				93DD31892441D2B000431521 /* FormField.Email.swift in Sources */,
 				9367C1DC243FFAC7001D4E59 /* InputFieldViewModel.swift in Sources */,
 				9367C1D3243FFAC7001D4E59 /* CommonView.swift in Sources */,
 				9367C1F6244001E3001D4E59 /* UIView.swift in Sources */,
