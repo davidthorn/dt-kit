@@ -9,6 +9,10 @@
 import Foundation
 
 public enum FormFieldType {
-    case custom(label: NSAttributedString, value: String?, placeholder: NSAttributedString?)
+    case custom(label: NSAttributedString,
+        value: String?,
+        placeholder: NSAttributedString?,
+        isSecure: Bool)
     case email(value: String?)
+    case password(value: String?, confirmation: Bool)
 }

@@ -8,69 +8,92 @@
 
 import Foundation
 
+public typealias FormFieldEventHandler = (String, String?, UIControl.Event) -> Void
+
 public class FormField: RepresentalFactory{
 
+    public var eventHandler: FormFieldEventHandler?
     private var fieldValue: String?
-    private let identifier: String
+    public let identifier: String
     private let type: FormFieldType
+    private lazy var commonTextViewModel: CommonTextFieldViewModel = {
+        CommonTextFieldViewModel(identifier: identifier,
+                                 value: fieldValue,
+                                 isSecure: isSecure,
+                                 placeholder: placeholder,
+                                 textDidChange: textFieldEventHandler)
+    }()
+    
+    public lazy var viewModel: InputFieldViewModel<CommonTextFieldViewModel> = {
+        InputFieldViewModel<CommonTextFieldViewModel>.init(identifier: identifier,
+                                                          labelText: labelText,
+                                                          textFieldViewModel: commonTextViewModel)
+    }()
 
-    public init(identifier: String, type: FormFieldType) {
+    public init(identifier: String, type: FormFieldType, handler: FormFieldEventHandler? = nil) {
         self.type = type
         self.identifier = identifier
+        eventHandler = handler
     }
 
     public func create() -> ContainedView {
         fieldValue = value
-
-        let handler: (String?, CommonTextFieldViewModelProtocol) -> Void = { currentValue,_ in
-            self.fieldValue = currentValue
-        }
-
-        let commonTextViewModel = CommonTextFieldViewModel(identifier: identifier,
-                                                           value: fieldValue,
-                                                           isSecure: isSecure,
-                                                           placeholder: placeholder,
-                                                           textDidChange: handler)
-        let viewModel = InputFieldViewModel<CommonTextFieldViewModel>.init(identifier: identifier,
-                                                                           labelText: labelText,
-                                                                           textFieldViewModel: commonTextViewModel)
-
         let representation = InputFieldRepresentation<InputFieldViewModel<CommonTextFieldViewModel>>(viewModel: viewModel)
         return representation.create()
     }
 
-    private var labelText: NSAttributedString {
+    public var labelText: NSAttributedString {
         switch type {
         case .email:
-            return "Email".with(attributes: [:])
-        case .custom(let label,_,_):
+            return EMAIL_LABEL.attributed
+        case .custom(let label,_,_,_):
             return label
+        case .password(_,let confirmation):
+            return confirmation ? PASSWORD_REPEAT_LABEL.attributed : PASSWORD_LABEL.attributed
         }
     }
 
-    private var placeholder: NSAttributedString {
+    public var placeholder: NSAttributedString {
         switch type {
         case .email:
-            return "Enter your email here".with(attributes: [:])
-        case .custom(_,_,let placeholderText):
-            return placeholderText ?? "".with(attributes: [:])
+            return EMAIL_PLACEHOLDER.attributed
+        case .custom(_,_,let placeholderText,_):
+            return placeholderText ?? "".attributed
+        case .password:
+            return PASSWORD_PLACEHOLDER.attributed
         }
     }
 
-    private var isSecure: Bool {
+    public var isSecure: Bool {
         switch type {
-        case .email, .custom:
+        case .email:
             return false
+        case .custom(_,_,_, let isSecure):
+            return isSecure
+        case .password:
+            return true
         }
     }
 
-    private var value: String? {
+    public var value: String? {
         switch type {
         case .email(let value):
             return value
-        case .custom(_,let value,_):
+        case .custom(_,let value,_,_):
+            return value
+        case .password(let value,_):
             return value
         }
+    }
+
+    private func textFieldEventHandler(value: String?,
+                                       commonTextViewModel: CommonTextFieldViewModelProtocol,
+                                       event: UIControl.Event) {
+        eventHandler?(identifier, value, event)
+    }
+
+    public func shouldBecomeFirstResponder() {
+        viewModel.shouldBecomeFirstResponder()
     }
 
 }
