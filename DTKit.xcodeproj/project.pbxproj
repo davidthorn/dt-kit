@@ -42,10 +42,14 @@
 		93D2A8E12440AC18001D1548 /* RepresentableRowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2A8D82440AC18001D1548 /* RepresentableRowProtocol.swift */; };
 		93D2A8E22440AC18001D1548 /* RepresentableSectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2A8D92440AC18001D1548 /* RepresentableSectionProtocol.swift */; };
 		93D2A8E32440AC18001D1548 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2A8DA2440AC18001D1548 /* CommonViewController.swift */; };
-		93D2A8FF2440EC76001D1548 /* ContainedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2A8FE2440EC76001D1548 /* ContainedView.swift */; };
 		93D2A9022441B42A001D1548 /* TextType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2A9012441B42A001D1548 /* TextType.swift */; };
 		93D2A9062441B53F001D1548 /* IdentifableHeaderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2A9042441B53F001D1548 /* IdentifableHeaderSection.swift */; };
 		93D2A9072441B53F001D1548 /* CommonHeaderTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2A9052441B53F001D1548 /* CommonHeaderTitle.swift */; };
+		93D2A90B2441C646001D1548 /* ContainedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2A90A2441C646001D1548 /* ContainedView.swift */; };
+		93D2A90E2441C6D4001D1548 /* RepresentationalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2A90D2441C6D4001D1548 /* RepresentationalItem.swift */; };
+		93D2A9102441C6F7001D1548 /* RepresentalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2A90F2441C6F7001D1548 /* RepresentalFactory.swift */; };
+		93D2A9122441C718001D1548 /* RepresentationalSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2A9112441C718001D1548 /* RepresentationalSection.swift */; };
+		93D2A9152441C757001D1548 /* InputFieldRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2A9142441C757001D1548 /* InputFieldRepresentation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,10 +101,14 @@
 		93D2A8D82440AC18001D1548 /* RepresentableRowProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepresentableRowProtocol.swift; path = ../RepresentableRowProtocol.swift; sourceTree = "<group>"; };
 		93D2A8D92440AC18001D1548 /* RepresentableSectionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepresentableSectionProtocol.swift; path = ../RepresentableSectionProtocol.swift; sourceTree = "<group>"; };
 		93D2A8DA2440AC18001D1548 /* CommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
-		93D2A8FE2440EC76001D1548 /* ContainedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainedView.swift; path = DTKit/Common/ContainedView.swift; sourceTree = SOURCE_ROOT; };
 		93D2A9012441B42A001D1548 /* TextType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextType.swift; sourceTree = "<group>"; };
 		93D2A9042441B53F001D1548 /* IdentifableHeaderSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifableHeaderSection.swift; sourceTree = "<group>"; };
 		93D2A9052441B53F001D1548 /* CommonHeaderTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonHeaderTitle.swift; sourceTree = "<group>"; };
+		93D2A90A2441C646001D1548 /* ContainedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainedView.swift; sourceTree = "<group>"; };
+		93D2A90D2441C6D4001D1548 /* RepresentationalItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentationalItem.swift; sourceTree = "<group>"; };
+		93D2A90F2441C6F7001D1548 /* RepresentalFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentalFactory.swift; sourceTree = "<group>"; };
+		93D2A9112441C718001D1548 /* RepresentationalSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentationalSection.swift; sourceTree = "<group>"; };
+		93D2A9142441C757001D1548 /* InputFieldRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldRepresentation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,7 +251,6 @@
 		93D2A8D02440AC18001D1548 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				93D2A8FE2440EC76001D1548 /* ContainedView.swift */,
 				93D2A8D12440AC18001D1548 /* CommonTableViewController.swift */,
 				93D2A8D22440AC18001D1548 /* RepresentableViewController */,
 				93D2A8DA2440AC18001D1548 /* CommonViewController.swift */,
@@ -254,9 +261,12 @@
 		93D2A8D22440AC18001D1548 /* RepresentableViewController */ = {
 			isa = PBXGroup;
 			children = (
+				93D2A9132441C745001D1548 /* Representations */,
+				93D2A90C2441C6CC001D1548 /* models */,
 				93D2A8E52440ADEB001D1548 /* cells */,
 				93D2A8E42440ADD9001D1548 /* types */,
 				93D2A8D72440AC18001D1548 /* RepresentableViewController.swift */,
+				93D2A90A2441C646001D1548 /* ContainedView.swift */,
 			);
 			path = RepresentableViewController;
 			sourceTree = "<group>";
@@ -269,6 +279,7 @@
 				93D2A8D82440AC18001D1548 /* RepresentableRowProtocol.swift */,
 				93D2A8D92440AC18001D1548 /* RepresentableSectionProtocol.swift */,
 				93D2A8D32440AC18001D1548 /* RepresentableViewModelProtocol.swift */,
+				93D2A90F2441C6F7001D1548 /* RepresentalFactory.swift */,
 			);
 			path = types;
 			sourceTree = "<group>";
@@ -296,6 +307,23 @@
 				93D2A9052441B53F001D1548 /* CommonHeaderTitle.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		93D2A90C2441C6CC001D1548 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				93D2A90D2441C6D4001D1548 /* RepresentationalItem.swift */,
+				93D2A9112441C718001D1548 /* RepresentationalSection.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		93D2A9132441C745001D1548 /* Representations */ = {
+			isa = PBXGroup;
+			children = (
+				93D2A9142441C757001D1548 /* InputFieldRepresentation.swift */,
+			);
+			path = Representations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,6 +444,7 @@
 				9367C1DD243FFAC7001D4E59 /* InputField.swift in Sources */,
 				9367C1D8243FFAC7001D4E59 /* BorderCommonView.swift in Sources */,
 				93D2A8DB2440AC18001D1548 /* CommonTableViewController.swift in Sources */,
+				93D2A90E2441C6D4001D1548 /* RepresentationalItem.swift in Sources */,
 				9367C1EA243FFC67001D4E59 /* CTAButton.swift in Sources */,
 				9367C1EF243FFCA1001D4E59 /* LabelledInfoIcon.swift in Sources */,
 				9367C1ED243FFC97001D4E59 /* LabellSwitchView.swift in Sources */,
@@ -424,6 +453,7 @@
 				9367C1DB243FFAC7001D4E59 /* FormButtonViewModel.swift in Sources */,
 				93D2A9022441B42A001D1548 /* TextType.swift in Sources */,
 				9367C1D6243FFAC7001D4E59 /* CommonTextFieldViewModelProtocol.swift in Sources */,
+				93D2A9122441C718001D1548 /* RepresentationalSection.swift in Sources */,
 				93D2A8E32440AC18001D1548 /* CommonViewController.swift in Sources */,
 				9367C1F7244001E3001D4E59 /* Array.swift in Sources */,
 				93D2A8DF2440AC18001D1548 /* RepresentableSectionHeaderProtocol.swift in Sources */,
@@ -433,15 +463,17 @@
 				9367C1DC243FFAC7001D4E59 /* InputFieldViewModel.swift in Sources */,
 				9367C1D3243FFAC7001D4E59 /* CommonView.swift in Sources */,
 				9367C1F6244001E3001D4E59 /* UIView.swift in Sources */,
+				93D2A9152441C757001D1548 /* InputFieldRepresentation.swift in Sources */,
 				9367C1D4243FFAC7001D4E59 /* CommonTextFieldViewModel.swift in Sources */,
+				93D2A90B2441C646001D1548 /* ContainedView.swift in Sources */,
 				9367C1DE243FFAC7001D4E59 /* InputFieldViewModelProtocol.swift in Sources */,
 				93D2A8DD2440AC18001D1548 /* DTKitCustomTableviewCell.swift in Sources */,
+				93D2A9102441C6F7001D1548 /* RepresentalFactory.swift in Sources */,
 				93D2A8E12440AC18001D1548 /* RepresentableRowProtocol.swift in Sources */,
 				9367C1D9243FFAC7001D4E59 /* FormButtonViewModelProtocol.swift in Sources */,
 				93D2A8CE2440ABD9001D1548 /* String.swift in Sources */,
 				93D2A9072441B53F001D1548 /* CommonHeaderTitle.swift in Sources */,
 				9367C1FB244001FB001D4E59 /* Constraint.swift in Sources */,
-				93D2A8FF2440EC76001D1548 /* ContainedView.swift in Sources */,
 				9367C1F8244001E3001D4E59 /* UIEdgeInsets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
