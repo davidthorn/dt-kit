@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol InputFieldViewModelProtocol {
+public protocol InputFieldViewModelProtocol {
     associatedtype TextFieldViewModel: Hashable & CommonTextFieldViewModelProtocol
     var identifier: String { get }
     var labelText: NSAttributedString { get }

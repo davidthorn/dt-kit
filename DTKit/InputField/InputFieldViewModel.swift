@@ -16,6 +16,12 @@ public struct InputFieldViewModel<T: Hashable & CommonTextFieldViewModelProtocol
     public var labelText: NSAttributedString
     public var textFieldViewModel: TextFieldViewModel
 
+    public init(identifier: String, labelText: NSAttributedString, textFieldViewModel: TextFieldViewModel) {
+        self.identifier = identifier
+        self.labelText = labelText
+        self.textFieldViewModel = textFieldViewModel
+    }
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(identifier)
         hasher.combine(labelText)
