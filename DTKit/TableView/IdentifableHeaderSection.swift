@@ -15,13 +15,13 @@ protocol IdentifableHeaderSectionViewModelProtocol {
     associatedtype Item: IdentifiableRow
 }
 
-open class IdentifableHeaderSection<T: IdentifiableRow>: IdentifiableHeaderSectionType {
+open class IdentifableHeaderSection<T: RepresentableSectionProtocol>: IdentifiableHeaderSectionType {
 
     public var view: UIView? {
         headerView()
     }
 
-    public typealias Row = T
+    public typealias Row = T.Row
     public var rows: [Row] = []
     public var title: String?
 
@@ -43,6 +43,18 @@ open class IdentifableHeaderSection<T: IdentifiableRow>: IdentifiableHeaderSecti
     public func hash(into hasher: inout Hasher) {
         hasher.combine(rows)
         hasher.combine(title)
+    }
+
+}
+
+public extension IdentifableHeaderSection where T == RepresentationalSection {
+
+    convenience init(title: String?, fields: [FormField]) {
+        self.init(title: title, rows: fields.map { $0.create() })
+    }
+
+    convenience init(title: String?, containedViews: [ContainedView]) {
+        self.init(title: title, rows: containedViews)
     }
 
 }
