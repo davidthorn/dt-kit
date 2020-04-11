@@ -29,12 +29,12 @@ public final class LabelledSwitchView: CommonView {
 
         addSubview(label)
         label.pinLeading()
-        label.pinTop()
+        label.pinTop(constant: 0)
         label.pinBottom(lessThanOrEqualTo: 5)
         
         addSubview(switchView)
         switchView.pinTrailing(constant: 0)
-        switchView.pinTop()
+        switchView.pinTop(constant: 0)
         switchView.pinBottom(constant: 0)
         switchView.pinLead(view: label, constant: 10)
         switchView.addTarget(self, action: #selector(switchValueChanged), for: .valueChanged)

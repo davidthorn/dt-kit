@@ -38,7 +38,7 @@ public final class LabelledInfoIcon: CommonView {
 
         addSubview(label)
         label.pinLeading()
-        label.pinTop()
+        label.pinTop(constant: 0)
         label.pinBottom(constant: 0)
         label.setContentHuggingPriority(.required, for: .horizontal)
         label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
@@ -46,7 +46,7 @@ public final class LabelledInfoIcon: CommonView {
         addSubview(imageView)
         imageView.contentMode = .scaleAspectFit
         imageView.pinTrailing(lessThanOrEqualTo: 0)
-        imageView.pinTop()
+        imageView.pinTop(constant: 0)
         imageView.pinBottom(constant: 0)
         imageView.pinLead(view: label, constant: 10)
         let tap = UITapGestureRecognizer(target: self, action: #selector(imageViewIconTapped))
