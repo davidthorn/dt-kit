@@ -6,7 +6,7 @@
 //  Copyright © 2020 David Thorn. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public typealias CommonTextFieldEventHandler = (String?, CommonTextFieldViewModelProtocol, UIControl.Event) -> Void
 

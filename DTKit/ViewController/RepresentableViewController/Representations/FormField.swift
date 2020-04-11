@@ -6,7 +6,7 @@
 //  Copyright © 2020 Thorn, David. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public typealias FormFieldEventHandler = (String, String?, UIControl.Event) -> Void
 
