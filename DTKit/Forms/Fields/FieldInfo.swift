@@ -48,10 +48,15 @@ public struct FieldInfo {
             self.placeholder = EMAIL_PLACEHOLDER.attributed
             self.isSecure = false
         case .password(let value, let confirmation):
-            label = PASSWORD_PLACEHOLDER.attributed
+            label = PASSWORD_LABEL.attributed
             self.value = value
             self.placeholder = confirmation ? PASSWORD_PLACEHOLDER.attributed : PASSWORD_PLACEHOLDER.attributed
             self.isSecure = true
+        case .number(let label, let value, let placeholder):
+            self.label = label
+            self.value = value
+            self.placeholder = placeholder
+            self.isSecure = false
         }
     }
 
@@ -85,13 +90,17 @@ public extension FieldInfo {
     static func password(value: String?) -> FieldInfo {
         FieldInfo(identifier: FormFieldName.password,
                   type: .password(value: value,
-                                  confirmation: true))
+                                  confirmation: false))
     }
 
     static func passwordConfirmation(value: String?) -> FieldInfo {
         FieldInfo(identifier: FormFieldName.passwordConfirmation,
                   type: .password(value: value,
                                   confirmation: true))
+    }
+
+    static func number(identifier: String, type: FormFieldType) -> FieldInfo {
+        FieldInfo(identifier: identifier, type: type)
     }
 
 }

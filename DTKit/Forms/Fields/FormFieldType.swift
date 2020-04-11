@@ -15,4 +15,7 @@ public enum FormFieldType {
         isSecure: Bool)
     case email(value: String?)
     case password(value: String?, confirmation: Bool)
+    case number(label: NSAttributedString,
+        value: String?,
+        placeholder: NSAttributedString?)
 }
