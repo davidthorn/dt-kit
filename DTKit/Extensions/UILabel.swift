@@ -53,7 +53,7 @@ public extension UILabel {
 
     /// Creates a left aligned UILabel using the attributedString
     /// - Parameter attributedString: The attributedString that will set the UILabels attributedText property.
-    static func leftAligned(with attributedString: NSAttributedString) -> UILabel {
+    static func leftAligned(with attributedString: NSAttributedString? = nil) -> UILabel {
         aligned(with: attributedString, alignment: .left)
     }
 
@@ -79,8 +79,16 @@ public extension UILabel {
 
     /// Creates an aligned UILabel using the alignment provided
     /// - Parameter attributedString: The text that will set the UILabels text property.
-    static func aligned(with attributedString: NSAttributedString, alignment: NSTextAlignment) -> UILabel {
+    static func aligned(with attributedString: NSAttributedString? = nil, alignment: NSTextAlignment) -> UILabel {
+        guard let attributedString = attributedString else { return aligned(alignment: alignment) }
         let label = UILabel(defaultAttributedString: attributedString)
+        label.textAlignment = alignment
+        return label
+    }
+
+    /// Creates an aligned UILabel using the alignment provided
+    static func aligned(alignment: NSTextAlignment) -> UILabel {
+        let label = UILabel()
         label.textAlignment = alignment
         return label
     }
