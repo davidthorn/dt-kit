@@ -41,20 +41,22 @@ public extension UIView {
         ])
     }
 
-    func pinBottom(constant: CGFloat = 0) {
+    func pinBottom(constant: CGFloat = 0, priority: UILayoutPriority = .required) {
         guard let parentView = constrain()?.superview else { fatalError("View has not been added to parent") }
-        
+        let constraint = bottomAnchor.constraint(equalTo: parentView.bottomAnchor, constant: -abs(constant))
+        constraint.priority = priority
         NSLayoutConstraint.activate([
-            bottomAnchor.constraint(equalTo: parentView.bottomAnchor, constant: -abs(constant))
+            constraint
         ])
     }
     
-    func pinBottom(lessThanOrEqualTo: CGFloat = 0) {
+    func pinBottom(lessThanOrEqualTo: CGFloat = 0, priority: UILayoutPriority = .required) {
         guard let parentView = constrain()?.superview else { fatalError("View has not been added to parent") }
-        
+        let constraint = bottomAnchor.constraint(lessThanOrEqualTo: parentView.bottomAnchor,
+                                                 constant: -abs(lessThanOrEqualTo))
+        constraint.priority = priority
         NSLayoutConstraint.activate([
-            bottomAnchor.constraint(lessThanOrEqualTo: parentView.bottomAnchor,
-                                    constant: -abs(lessThanOrEqualTo))
+            constraint
         ])
     }
     
