@@ -21,4 +21,11 @@ public extension UIStackView {
 
     }
 
+    /// Helper method to add an array or views as arranged views.
+    /// - Parameter views: Any array of views.
+    func addArrangedSubviews(views: [UIView]) {
+        views.forEach { addArrangedSubview($0) }
+    }
+
+
 }
