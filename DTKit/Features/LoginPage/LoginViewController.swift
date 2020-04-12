@@ -10,13 +10,23 @@ import UIKit
 
 final public class LoginViewController<T: LoginViewModelType>: CommonViewController<T> {
 
-    private let mainTitle = "Login".containedView
+    private let mainTitle = "Login".with(attributes: [
+        NSAttributedString.Key.foregroundColor: UIColor.white,
+        NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)
+        ]).textType
+
     private let subTitle = "Please enter your credentials in the fields below to authenticate.".containedView
 
     private let scrollView = CommonScrollView()
     private let containerView = CommonView()
     private let stackViewWrapper = CommonView()
     private let stackView: CommonStackView = .vertical
+    private lazy var headerView: ContainedView = {
+        BorderHeaderRepresentation(textType: mainTitle,
+                                   headerBackgroundColor: .red,
+                                   contentView: stackView).create()
+    }()
+
     private var credentials = ValidateableCredentials<LoginCredentials>() {
         didSet {
 
@@ -79,12 +89,14 @@ final public class LoginViewController<T: LoginViewModelType>: CommonViewControl
         containerView.edgesToSuperview()
         containerView.backgroundColor = .white
         containerView.width(view: scrollView)
-        containerView.addSubview(stackView)
+        containerView.addSubview(headerView)
 
-        stackView.center(insets: .init(top: 0, left: 0, bottom: 0, right: 0))
-        stackView.pinHorizontal(insets: .horizontal(constant: 20))
+        headerView.center(insets: .init(top: 0, left: 0, bottom: 0, right: 0))
+        headerView.pinHorizontal(insets: .horizontal(constant: 20))
+
+        stackView.spacing = 20
         stackView.addArrangedSubviews(views: [
-            mainTitle, subTitle
+            subTitle
         ])
         stackView.addArrangedSubviews(views: containedViews)
 
