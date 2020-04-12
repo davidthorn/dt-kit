@@ -35,11 +35,14 @@ public final class LabelRepresentation: RepresentalFactory, Hashable {
         let container: ContainedView = .create(with: identifier)
         container.addSubview(label)
         label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
         label.textAlignment = textAlignment
         label.pinTop(constant: 0)
         label.pinHorizontal(insets: .horizontal(constant: 10))
-        label.pinBottom(lessThanOrEqualTo: 0)
-
+        label.pinBottom(constant: 0)
+        label.setContentCompressionResistancePriority(.required, for: .vertical)
+        label.setContentCompressionResistancePriority(.required, for: .horizontal)
+        
         return container
     }
 
