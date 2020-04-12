@@ -29,5 +29,19 @@ public extension UIEdgeInsets {
     init(value: CGFloat) {
         self.init(top: value, left: value, bottom: value, right: value)
     }
-    
+}
+
+
+extension UIEdgeInsets: Hashable {
+
+    static func == (lhs: UIEdgeInsets, rhs: UIEdgeInsets) -> Bool {
+        lhs.hashValue == rhs.hashValue
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(top)
+        hasher.combine(bottom)
+        hasher.combine(left)
+        hasher.combine(right)
+    }
 }
