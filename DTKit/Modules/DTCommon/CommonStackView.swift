@@ -15,7 +15,7 @@ open class CommonStackView: UIStackView {
         let stackView = CommonStackView()
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
-        stackView.spacing = 10
+        stackView.spacing = 8
         return stackView
     }
 }
