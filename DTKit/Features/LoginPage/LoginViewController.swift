@@ -16,8 +16,11 @@ final public class LoginViewController<T: LoginViewModelType>: CommonViewControl
     private let stackView: CommonStackView = .vertical
     private var credentials = ValidateableCredentials<LoginCredentials>() {
         didSet {
-            if let validCredentials = credentials.validate() {
-                viewModel?.receivedNewCredentials(validCredentials)
+
+            if credentials.validate() != nil {
+                formButton?.commonButtonType = .primary
+            } else {
+                formButton?.commonButtonType = .disabled
             }
         }
     }
@@ -26,11 +29,21 @@ final public class LoginViewController<T: LoginViewModelType>: CommonViewControl
         [
             .email(value: viewModel?.email),
             .password(value:viewModel?.password),
+            .button(identifier: FormFieldName.submitButton, title: "Submit", type: .disabled) { [weak self] button in
+                guard let credentials = self?.credentials.validate() else { return }
+
+                button.commonButtonType = .disabled
+                self?.viewModel?.receivedNewCredentials(credentials)
+            }
         ]
     }()
 
     private lazy var formFields: [FormField] = {
         self.fieldInfos.formFields
+    }()
+
+    private lazy var containedViews: [ContainedView] = {
+        self.formFields.map { $0.create() }
     }()
 
     private var emailField: FormField? {
@@ -43,6 +56,10 @@ final public class LoginViewController<T: LoginViewModelType>: CommonViewControl
         guard let password = formFields.first(where: { $0.identifier == FormFieldName.password }) else { return nil }
 
         return password
+    }
+
+    private var formButton: CommonButton? {
+        formFields.submitButton
     }
 
     public override func viewDidLoad() {
@@ -64,14 +81,16 @@ final public class LoginViewController<T: LoginViewModelType>: CommonViewControl
         stackView.center(insets: .init(top: 0, left: 0, bottom: 0, right: 0))
         stackView.pinHorizontal(insets: .horizontal(constant: 20))
 
-        formFields.forEach { field in
-            let view = field.create()
+        containedViews.forEach { containedView in
+            let view = containedView
 
             stackView.addArrangedSubview(view)
             if #available(iOS 11.0, *) {
                 stackView.setCustomSpacing(30, after: view)
             }
+        }
 
+        formFields.forEach { field in
             field.eventHandler = { [weak self] name, value, event in
                 self?.textFieldEventHandler(name: name, value: value, event: event)
             }

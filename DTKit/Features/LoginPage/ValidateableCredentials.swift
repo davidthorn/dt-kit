@@ -12,13 +12,27 @@ public struct ValidateableCredentials<T: LoginCredentialsProtocol>: Hashable {
     private var _email: String?
     public var email: String? {
         get { _email }
-        set { _email = newValue }
+        set {
+
+            _email = nil
+            
+            guard newValue.isNotEmpty else { return }
+
+            _email = newValue
+        }
     }
 
     private var _password: String?
     public var password: String? {
         get { _password }
-        set { _password = newValue }
+        set {
+
+            _password = nil
+
+            guard newValue.isNotEmpty else { return }
+
+            _password = newValue
+        }
     }
 
     private struct Credentials: Encodable, Hashable {
