@@ -1,5 +1,5 @@
 //
-//  IdentifableHeaderSection.swift
+//  HeaderSection.swift
 //  DTKit
 //
 //  Created by Thorn, David on 10.04.20.
@@ -8,14 +8,10 @@
 import UIKit
 
 public typealias RepresentableHeaderSection = RepresentableSectionProtocol & RepresentableSectionHeaderProtocol
-public typealias IdentifiableHeaderSectionType = RepresentableHeaderSection & Hashable
+public typealias HeaderSectionType = RepresentableHeaderSection & Hashable
 public typealias IdentifiableRow = RepresentableRowProtocol & Hashable
 
-protocol IdentifableHeaderSectionViewModelProtocol {
-    associatedtype Item: IdentifiableRow
-}
-
-open class IdentifableHeaderSection<T: RepresentableSectionProtocol>: IdentifiableHeaderSectionType {
+open class HeaderSection<T: RepresentableSectionProtocol>: HeaderSectionType {
 
     public var view: UIView? {
         headerView()
@@ -36,7 +32,7 @@ open class IdentifableHeaderSection<T: RepresentableSectionProtocol>: Identifiab
         return CommonHeaderTitle(textType: .text(value: title))
     }
 
-    public static func == (lhs: IdentifableHeaderSection<T>, rhs: IdentifableHeaderSection<T>) -> Bool {
+    public static func == (lhs: HeaderSection<T>, rhs: HeaderSection<T>) -> Bool {
         lhs.hashValue == rhs.hashValue
     }
 
@@ -47,7 +43,7 @@ open class IdentifableHeaderSection<T: RepresentableSectionProtocol>: Identifiab
 
 }
 
-public extension IdentifableHeaderSection where T == RepresentationalSection {
+public extension HeaderSection where T == RepresentationalSection {
 
     convenience init(title: String?, fields: [FormField]) {
         self.init(title: title, rows: fields.map { $0.create() })
