@@ -10,7 +10,7 @@ import UIKit
 
 open class CommonView: UIView {
 
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }

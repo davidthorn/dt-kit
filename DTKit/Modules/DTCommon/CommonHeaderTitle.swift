@@ -12,18 +12,29 @@ open class CommonHeaderTitle: CommonView {
     private let stackView = UIStackView()
     private let container = CommonView()
     private let label: UILabel = .leftAligned()
+    private var insets: UIEdgeInsets = .init(top: 20,
+                                             left: 0,
+                                             bottom: 0,
+                                             right: 0)
 
-    public convenience init(textType: TextType) {
+    public var textType: TextType = .text(value: nil) {
+        didSet {
+            setup(viewModel: textType)
+        }
+    }
+
+    public convenience init(textType: TextType, insets: UIEdgeInsets = .zero) {
         self.init()
-        setup(viewModel: textType)
+        self.textType = textType
+        self.insets = insets
     }
 
-    public convenience init(attributedString: NSAttributedString) {
-        self.init(textType: .attributed(text: attributedString))
+    public convenience init(attributedString: NSAttributedString, insets: UIEdgeInsets = .zero) {
+        self.init(textType: .attributed(text: attributedString), insets: insets)
     }
 
-    public convenience init(text: String) {
-        self.init(textType: .text(value: text))
+    public convenience init(text: String, insets: UIEdgeInsets = .zero) {
+        self.init(textType: .text(value: text), insets: insets)
         label.textColor = .darkGray
     }
 
@@ -33,9 +44,7 @@ open class CommonHeaderTitle: CommonView {
 
         addSubview(container)
         container.backgroundColor = .lightGray
-        container.pinHorizontal()
-        container.pinTop(constant: 20)
-        container.pinBottom(constant: 0)
+        container.edgesToSuperview(insets: insets)
 
         container.addSubview(stackView)
         stackView.edgesToSuperview(insets: .init(horizontal: 20, vertical: 10))
