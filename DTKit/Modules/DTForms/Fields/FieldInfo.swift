@@ -63,6 +63,18 @@ public struct FieldInfo {
             isSecure = false
             placeholder = nil
             value = title
+        case .primaryButton(let title,_):
+        /// TODO: Added attributed string extension to have an empty value.
+            label = "".attributed
+            isSecure = false
+            placeholder = nil
+            value = title
+        case .destructiveButton(let title,_):
+        /// TODO: Added attributed string extension to have an empty value.
+            label = "".attributed
+            isSecure = false
+            placeholder = nil
+            value = title
         }
     }
 
@@ -109,15 +121,53 @@ public extension FieldInfo {
         FieldInfo(identifier: identifier, type: type)
     }
 
+    /// A Custom Common Button Field Info 
+    /// - Parameters:
+    ///   - identifier: The identifier used for the button
+    ///   - title: The custom title that will be displayed on the buttob
+    ///   - type: The type of the button
+    ///   - tapHandler: The handler that will be called on onTouchInside.
     static func button(identifier: String,
                        title: String,
                        type: CommonButtonType,
-                       tapHandler: @escaping VoidCompletion) -> FieldInfo {
-        
+                       tapHandler: @escaping ButtonTapHandler) -> FieldInfo {
+
         FieldInfo(identifier: identifier,
                   type: .button(title: title,
                                 type: type,
                                 tapHandler: tapHandler))
+    }
+
+    /// A primary common button with the text of SUBMIT_BUTTON_TITLE
+    /// - Parameter tapHandler: Handler that will be called on onTouchInside
+    static func primaryButton(tapHandler: @escaping ButtonTapHandler) -> FieldInfo {
+        .init(identifier: FormFieldName.submitButton,
+              type: .primaryButton(title: SUBMIT_BUTTON_TITLE,
+                                   tapHandler: tapHandler))
+    }
+
+    /// A primary common button with the text of SUBMIT_BUTTON_TITLE
+    /// - Parameter tapHandler: Handler that will be called on onTouchInside
+    static func submitButton(tapHandler: @escaping ButtonTapHandler) -> FieldInfo {
+        .init(identifier: FormFieldName.submitButton,
+              type: .button(title: SUBMIT_BUTTON_TITLE,
+                            type: .disabled,
+                            tapHandler: tapHandler))
+    }
+
+    /// A destructive common button with the text of DELETE_BUTTON_TITLE
+    /// - Parameter tapHandler: Handler that will be called on onTouchInside
+    static func deleteButton(tapHandler: @escaping ButtonTapHandler) -> FieldInfo {
+        .init(identifier: FormFieldName.deleteButton,
+              type: .destructiveButton(title: DELETE_BUTTON_TITLE, tapHandler: tapHandler))
+    }
+
+    /// A primary common button with the text of SAVE_BUTTON_TITLE
+    /// - Parameter tapHandler: Handler that will be called on onTouchInside
+    static func saveButton(tapHandler: @escaping ButtonTapHandler) -> FieldInfo {
+        .init(identifier: FormFieldName.saveButton,
+              type: .primaryButton(title: SAVE_BUTTON_TITLE,
+                                   tapHandler: tapHandler))
     }
 
 }

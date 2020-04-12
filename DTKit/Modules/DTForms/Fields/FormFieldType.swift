@@ -18,5 +18,7 @@ public enum FormFieldType {
     case number(label: NSAttributedString,
         value: String?,
         placeholder: NSAttributedString?)
-    case button(title: String, type: CommonButtonType, tapHandler: VoidCompletion)
+    case button(title: String, type: CommonButtonType, tapHandler: ButtonTapHandler)
+    case primaryButton(title: String, tapHandler: ButtonTapHandler)
+    case destructiveButton(title: String, tapHandler: ButtonTapHandler)
 }

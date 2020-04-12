@@ -62,7 +62,7 @@ public class FormField {
             return confirmation ? PASSWORD_REPEAT_LABEL.attributed : PASSWORD_LABEL.attributed
         case .number(let label,_,_):
             return label
-        case .button:
+        case .button, .primaryButton, .destructiveButton:
             fatalError("Illegal use of FormField")
         }
     }
@@ -77,7 +77,7 @@ public class FormField {
             return PASSWORD_PLACEHOLDER.attributed
         case .number(_,_,let placeholderText):
             return placeholderText ?? "".attributed
-        case .button:
+        case .button, .primaryButton, .destructiveButton:
             fatalError("Illegal use of FormField")
         }
     }
@@ -90,7 +90,7 @@ public class FormField {
             return isSecure
         case .password:
             return true
-        case .button:
+        case .button, .primaryButton, .destructiveButton:
             fatalError("Illegal use of FormField")
         }
     }
@@ -106,6 +106,10 @@ public class FormField {
         case .number(_,let value,_):
             return value
         case .button(let title,_,_):
+            return title
+        case .primaryButton(let title,_):
+            return title
+        case .destructiveButton(let title,_):
             return title
         }
     }
@@ -127,10 +131,22 @@ public extension Array where Element == FormField {
 
     /// Returns the first FormFields representation as a CommonButton with an identifier equal to submitButton
     var submitButton: CommonButton? {
+        button(name: FormFieldName.submitButton)
+    }
+
+    var deleteButton: CommonButton? {
+        button(name: FormFieldName.deleteButton)
+    }
+
+    var saveButton: CommonButton? {
+        button(name: FormFieldName.saveButton)
+    }
+
+    private func button(name: String) -> CommonButton? {
         self
-            .first(where:{ $0.identifier == FormFieldName.submitButton })?
+            .first(where:{ $0.identifier == name })?
             .representation?
-            .submitButton
+            .commonButton
     }
 
 }
