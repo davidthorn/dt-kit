@@ -81,6 +81,10 @@
 		9370A5192443173C00BB340F /* CommonButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A5182443173C00BB340F /* CommonButtonType.swift */; };
 		9370A51B244317A200BB340F /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A51A244317A200BB340F /* CommonButton.swift */; };
 		9370A51D244330A700BB340F /* CommonButtonRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A51C244330A700BB340F /* CommonButtonRepresentation.swift */; };
+		938FABA8244341770042942D /* CommonSecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938FABA7244341770042942D /* CommonSecondaryButton.swift */; };
+		938FABAA244341860042942D /* CommonPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938FABA9244341860042942D /* CommonPrimaryButton.swift */; };
+		938FABAC244341940042942D /* CommonDisabledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938FABAB244341940042942D /* CommonDisabledButton.swift */; };
+		938FABAE244341DF0042942D /* CommonDestructiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938FABAD244341DF0042942D /* CommonDestructiveButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +196,10 @@
 		9370A5182443173C00BB340F /* CommonButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButtonType.swift; sourceTree = "<group>"; };
 		9370A51A244317A200BB340F /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
 		9370A51C244330A700BB340F /* CommonButtonRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButtonRepresentation.swift; sourceTree = "<group>"; };
+		938FABA7244341770042942D /* CommonSecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonSecondaryButton.swift; sourceTree = "<group>"; };
+		938FABA9244341860042942D /* CommonPrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonPrimaryButton.swift; sourceTree = "<group>"; };
+		938FABAB244341940042942D /* CommonDisabledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDisabledButton.swift; sourceTree = "<group>"; };
+		938FABAD244341DF0042942D /* CommonDestructiveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDestructiveButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +408,7 @@
 		9370A48624430A5000BB340F /* DTCommon */ = {
 			isa = PBXGroup;
 			children = (
+				938FABA6244341660042942D /* Buttons */,
 				9370A4D424430A5C00BB340F /* CommonHeaderTitle.swift */,
 				9370A48824430A5000BB340F /* CommonView.swift */,
 				9370A48924430A5000BB340F /* CommonTextField */,
@@ -411,8 +420,6 @@
 				9370A49224430A5000BB340F /* CommonStackView.swift */,
 				9370A49324430A5000BB340F /* LabellSwitchView.swift */,
 				9370A49524430A5000BB340F /* LabelledInfoIcon.swift */,
-				9370A5182443173C00BB340F /* CommonButtonType.swift */,
-				9370A51A244317A200BB340F /* CommonButton.swift */,
 			);
 			path = DTCommon;
 			sourceTree = "<group>";
@@ -502,6 +509,19 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		938FABA6244341660042942D /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				9370A5182443173C00BB340F /* CommonButtonType.swift */,
+				9370A51A244317A200BB340F /* CommonButton.swift */,
+				938FABA7244341770042942D /* CommonSecondaryButton.swift */,
+				938FABA9244341860042942D /* CommonPrimaryButton.swift */,
+				938FABAB244341940042942D /* CommonDisabledButton.swift */,
+				938FABAD244341DF0042942D /* CommonDestructiveButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -651,6 +671,7 @@
 				9370A4F224430A5C00BB340F /* UIStackView.swift in Sources */,
 				9370A49824430A5000BB340F /* String.swift in Sources */,
 				9370A4F824430A5C00BB340F /* LoginViewController.swift in Sources */,
+				938FABA8244341770042942D /* CommonSecondaryButton.swift in Sources */,
 				9370A4A024430A5000BB340F /* FieldInfo.swift in Sources */,
 				9370A4BB24430A5000BB340F /* DTKitCustomTableviewCell.swift in Sources */,
 				9370A4F624430A5C00BB340F /* LoginViewModelProtocol.swift in Sources */,
@@ -663,6 +684,7 @@
 				9370A4CF24430A5000BB340F /* LabellSwitchView.swift in Sources */,
 				9370A4C524430A5000BB340F /* CommonView.swift in Sources */,
 				9370A4F524430A5C00BB340F /* LoginCredentials.swift in Sources */,
+				938FABAC244341940042942D /* CommonDisabledButton.swift in Sources */,
 				9370A4D124430A5000BB340F /* LabelledInfoIcon.swift in Sources */,
 				9370A4CE24430A5000BB340F /* CommonStackView.swift in Sources */,
 				9370A4F424430A5C00BB340F /* LoginViewModel.swift in Sources */,
@@ -705,9 +727,11 @@
 				9370A4CD24430A5000BB340F /* CommonScrollView.swift in Sources */,
 				9370A4B224430A5000BB340F /* RepresentableViewModelProtocol.swift in Sources */,
 				9370A5192443173C00BB340F /* CommonButtonType.swift in Sources */,
+				938FABAA244341860042942D /* CommonPrimaryButton.swift in Sources */,
 				9370A51B244317A200BB340F /* CommonButton.swift in Sources */,
 				9370A4C624430A5000BB340F /* CommonTextFieldViewModel.swift in Sources */,
 				9370A49F24430A5000BB340F /* FormFieldType.swift in Sources */,
+				938FABAE244341DF0042942D /* CommonDestructiveButton.swift in Sources */,
 				9370A4F724430A5C00BB340F /* ValidateableCredentials.swift in Sources */,
 				9370A4ED24430A5C00BB340F /* CTAButton.swift in Sources */,
 				9370A4F024430A5C00BB340F /* FormButtonViewModel.swift in Sources */,

@@ -17,7 +17,7 @@ extension FormField: RepresentalFactory {
             return EmailFieldRepresentation<FieldType>(viewModel: viewModel).create()
         case .number:
             return NumberFieldRepresentation<FieldType>(viewModel: viewModel).create()
-        case .button:
+        case .button, .primaryButton, .destructiveButton:
             return CommonButtonRepresentation(formFieldType: type).create()
         default:
             return InputFieldRepresentation<FieldType>(viewModel: viewModel).create()

@@ -12,4 +12,6 @@ public struct FormFieldName {
     public static let password = "password"
     public static let passwordConfirmation = "passwordConfirmation"
     public static let submitButton = "submitButton"
+    public static let deleteButton = "deleteButton"
+    public static let saveButton = "saveButton"
 }

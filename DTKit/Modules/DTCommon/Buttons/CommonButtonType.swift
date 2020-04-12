@@ -13,4 +13,5 @@ public enum CommonButtonType {
     case secondary
     case disabled
     case common
+    case destructive
 }

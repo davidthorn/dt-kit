@@ -12,18 +12,27 @@ open class CommonButtonRepresentation: RepresentalFactory, Hashable {
 
     private let title: String
     private let type: CommonButtonType
-    private let tapHandler: VoidCompletion
+    private let tapHandler: ButtonTapHandler
+    private let positiveState: CommonButtonType
 
-    public init(title: String, type: CommonButtonType, tapHandler: @escaping VoidCompletion) {
+    public init(title: String,
+                type: CommonButtonType,
+                positiveState: CommonButtonType = .common,
+                tapHandler: @escaping ButtonTapHandler) {
         self.title = title
         self.type = type
         self.tapHandler = tapHandler
+        self.positiveState = positiveState
     }
 
     public convenience init(formFieldType: FormFieldType) {
         switch formFieldType {
         case .button(let title, let type, let tapHandler):
             self.init(title: title, type: type, tapHandler: tapHandler)
+        case .primaryButton(let title, let tapHandler):
+            self.init(title: title, type: .disabled, positiveState: .primary, tapHandler: tapHandler)
+        case .destructiveButton(let title, let tapHandler):
+            self.init(title: title, type: .disabled, positiveState: .destructive, tapHandler: tapHandler)
         default:
             fatalError("Illegal use of CommonButtonRepresentation")
         }
@@ -32,6 +41,7 @@ open class CommonButtonRepresentation: RepresentalFactory, Hashable {
     public func create() -> ContainedView {
         let containedView = ContainedView()
         let button: CommonButton = .common
+        button.positiveState = positiveState
         button.commonButtonType = type
         button.onTap(handler: tapHandler)
         button.setTitle(title, for: .normal)
