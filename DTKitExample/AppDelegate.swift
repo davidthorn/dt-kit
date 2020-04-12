@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DTKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,7 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func rootViewController() -> UIViewController {
-        let viewController = ViewController()
+        let initialCredentials = LoginCredentials()
+        let loginViewModel = LoginViewModel(credentials: initialCredentials) { receivedCredentials in
+            debugPrint(receivedCredentials)
+        }
+        let viewController = LoginViewController<LoginViewModel>.init(viewModel: loginViewModel)
         viewController.title = "Default View Controller"
         return viewController
     }

@@ -10,16 +10,28 @@ import Foundation
 
 extension FormField: RepresentalFactory {
 
-    public func create() -> ContainedView {
+    private func createRepresentation() -> ContainedView {
         currentValue = value
         switch type {
         case .email:
             return EmailFieldRepresentation<FieldType>(viewModel: viewModel).create()
         case .number:
             return NumberFieldRepresentation<FieldType>(viewModel: viewModel).create()
+        case .button:
+            return CommonButtonRepresentation(formFieldType: type).create()
         default:
             return InputFieldRepresentation<FieldType>(viewModel: viewModel).create()
         }
+    }
+
+    public func create() -> ContainedView {
+        guard let containedView = representation else {
+            representation = createRepresentation()
+            return create()
+        }
+
+        return containedView
+
     }
 
 }

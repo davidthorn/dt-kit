@@ -12,6 +12,13 @@ public typealias FormFieldEventHandler = (String, String?, UIControl.Event) -> V
 
 public class FormField {
 
+    private var containedView: ContainedView?
+
+    public var representation: ContainedView? {
+        get { containedView }
+        set { containedView = newValue }
+    }
+
     private var fieldValue: String?
 
     public var eventHandler: FormFieldEventHandler?
@@ -30,7 +37,7 @@ public class FormField {
                                  placeholder: placeholder,
                                  textDidChange: textFieldEventHandler)
     }()
-    
+
     public lazy var viewModel: InputFieldViewModel<CommonTextFieldViewModel> = {
         InputFieldViewModel<CommonTextFieldViewModel>.init(identifier: identifier,
                                                           labelText: labelText,
@@ -55,6 +62,8 @@ public class FormField {
             return confirmation ? PASSWORD_REPEAT_LABEL.attributed : PASSWORD_LABEL.attributed
         case .number(let label,_,_):
             return label
+        case .button:
+            fatalError("Illegal use of FormField")
         }
     }
 
@@ -68,6 +77,8 @@ public class FormField {
             return PASSWORD_PLACEHOLDER.attributed
         case .number(_,_,let placeholderText):
             return placeholderText ?? "".attributed
+        case .button:
+            fatalError("Illegal use of FormField")
         }
     }
 
@@ -79,6 +90,8 @@ public class FormField {
             return isSecure
         case .password:
             return true
+        case .button:
+            fatalError("Illegal use of FormField")
         }
     }
 
@@ -92,6 +105,8 @@ public class FormField {
             return value
         case .number(_,let value,_):
             return value
+        case .button(let title,_,_):
+            return title
         }
     }
 
@@ -103,6 +118,19 @@ public class FormField {
 
     public func shouldBecomeFirstResponder() {
         viewModel.shouldBecomeFirstResponder()
+    }
+
+}
+
+public extension Array where Element == FormField {
+
+
+    /// Returns the first FormFields representation as a CommonButton with an identifier equal to submitButton
+    var submitButton: CommonButton? {
+        self
+            .first(where:{ $0.identifier == FormFieldName.submitButton })?
+            .representation?
+            .submitButton
     }
 
 }
