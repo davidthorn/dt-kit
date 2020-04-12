@@ -13,6 +13,9 @@ public struct ValidateableCredentials<T: LoginCredentialsProtocol>: Hashable {
     public var email: String? {
         get { _email }
         set {
+
+            _email = nil
+            
             guard newValue.isNotEmpty else { return }
 
             _email = newValue
@@ -23,6 +26,9 @@ public struct ValidateableCredentials<T: LoginCredentialsProtocol>: Hashable {
     public var password: String? {
         get { _password }
         set {
+
+            _password = nil
+
             guard newValue.isNotEmpty else { return }
 
             _password = newValue
