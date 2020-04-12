@@ -57,6 +57,12 @@ public struct FieldInfo {
             self.value = value
             self.placeholder = placeholder
             self.isSecure = false
+        case .button(let title,_,_):
+            /// TODO: Added attributed string extension to have an empty value.
+            label = "".attributed
+            isSecure = false
+            placeholder = nil
+            value = title
         }
     }
 
@@ -101,6 +107,17 @@ public extension FieldInfo {
 
     static func number(identifier: String, type: FormFieldType) -> FieldInfo {
         FieldInfo(identifier: identifier, type: type)
+    }
+
+    static func button(identifier: String,
+                       title: String,
+                       type: CommonButtonType,
+                       tapHandler: @escaping VoidCompletion) -> FieldInfo {
+        
+        FieldInfo(identifier: identifier,
+                  type: .button(title: title,
+                                type: type,
+                                tapHandler: tapHandler))
     }
 
 }

@@ -80,6 +80,7 @@
 		9370A51424430F5B00BB340F /* DTKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9367C1A9243FFA49001D4E59 /* DTKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9370A5192443173C00BB340F /* CommonButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A5182443173C00BB340F /* CommonButtonType.swift */; };
 		9370A51B244317A200BB340F /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A51A244317A200BB340F /* CommonButton.swift */; };
+		9370A51D244330A700BB340F /* CommonButtonRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A51C244330A700BB340F /* CommonButtonRepresentation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +191,7 @@
 		9370A50E24430F5600BB340F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9370A5182443173C00BB340F /* CommonButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButtonType.swift; sourceTree = "<group>"; };
 		9370A51A244317A200BB340F /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
+		9370A51C244330A700BB340F /* CommonButtonRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButtonRepresentation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,6 +359,7 @@
 				9370A46E24430A5000BB340F /* FormField.Password.swift */,
 				9370A46F24430A5000BB340F /* NumberFieldRepresentation.swift */,
 				9370A47024430A5000BB340F /* EmailFieldRepresentation.swift */,
+				9370A51C244330A700BB340F /* CommonButtonRepresentation.swift */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				9370A4C724430A5000BB340F /* CommonTextField.swift in Sources */,
 				9370A49624430A5000BB340F /* UIView.swift in Sources */,
 				9370A4AD24430A5000BB340F /* FormField.Email.swift in Sources */,
+				9370A51D244330A700BB340F /* CommonButtonRepresentation.swift in Sources */,
 				9370A4B724430A5000BB340F /* RepresentableSectionProtocol.swift in Sources */,
 				9370A4BE24430A5000BB340F /* RepresentableViewController.swift in Sources */,
 				9370A4EE24430A5C00BB340F /* FormButtonViewModelProtocol.swift in Sources */,

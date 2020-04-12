@@ -30,4 +30,13 @@ public final class ContainedView: CommonView, RepresentableRowProtocol {
 
 }
 
+public extension ContainedView {
+
+    /// Returns a CommonButton is the first subview is a CommonButton
+    var submitButton: CommonButton? {
+        subviews.first as? CommonButton
+    }
+
+}
+
 
