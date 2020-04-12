@@ -18,7 +18,7 @@ final public class LoginViewController<T: LoginViewModelType>: CommonViewControl
         didSet {
 
             if credentials.validate() != nil {
-                formButton?.commonButtonType = .primary
+                formButton?.applyPositiveState()
             } else {
                 formButton?.commonButtonType = .disabled
             }
@@ -29,7 +29,7 @@ final public class LoginViewController<T: LoginViewModelType>: CommonViewControl
         [
             .email(value: viewModel?.email),
             .password(value:viewModel?.password),
-            .button(identifier: FormFieldName.submitButton, title: "Submit", type: .disabled) { [weak self] button in
+            .saveButton { [weak self] button in
                 guard let credentials = self?.credentials.validate() else { return }
 
                 button.commonButtonType = .disabled
@@ -59,7 +59,7 @@ final public class LoginViewController<T: LoginViewModelType>: CommonViewControl
     }
 
     private var formButton: CommonButton? {
-        formFields.submitButton
+        formFields.saveButton
     }
 
     public override func viewDidLoad() {
@@ -114,6 +114,8 @@ final public class LoginViewController<T: LoginViewModelType>: CommonViewControl
 
         if event == .editingDidEndOnExit {
             handleOnExit(name: name)
+        } else {
+            formButton?.applyPositiveState()
         }
 
         if FormFieldName.email == name {
