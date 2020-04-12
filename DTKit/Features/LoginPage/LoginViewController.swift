@@ -10,6 +10,9 @@ import UIKit
 
 final public class LoginViewController<T: LoginViewModelType>: CommonViewController<T> {
 
+    private let mainTitle = "Login".containedView
+    private let subTitle = "Please enter your credentials in the fields below to authenticate.".containedView
+
     private let scrollView = CommonScrollView()
     private let containerView = CommonView()
     private let stackViewWrapper = CommonView()
@@ -80,15 +83,10 @@ final public class LoginViewController<T: LoginViewModelType>: CommonViewControl
 
         stackView.center(insets: .init(top: 0, left: 0, bottom: 0, right: 0))
         stackView.pinHorizontal(insets: .horizontal(constant: 20))
-
-        containedViews.forEach { containedView in
-            let view = containedView
-
-            stackView.addArrangedSubview(view)
-            if #available(iOS 11.0, *) {
-                stackView.setCustomSpacing(30, after: view)
-            }
-        }
+        stackView.addArrangedSubviews(views: [
+            mainTitle, subTitle
+        ])
+        stackView.addArrangedSubviews(views: containedViews)
 
         formFields.forEach { field in
             field.eventHandler = { [weak self] name, value, event in
