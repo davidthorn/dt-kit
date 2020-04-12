@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "DTKit"
-s.version      = "0.2.8"
+s.version      = "0.2.9"
 s.summary      = "A summary of your framework"
 s.description  = <<-DESC
     A framework providing custom implemenations of UIKit and helper extensions.
@@ -17,7 +17,7 @@ s.author       = { "David Thorn" => "david.thorn221278@googlemail.com" }
 
 s.source       = { :git => "https://github.com/davidthorn/dt-kit.git", :tag => "#{s.version}" }
 
-s.source_files  = "DTKit/Core/**/*.{swift}"
+
 
 s.subspec 'DTCommon' do |sp|
   sp.source_files = "DTKit/Modules/DTCommon/**/*.{swift}"
@@ -49,7 +49,8 @@ s.subspec 'DTRepresentations' do |sp|
 end
 
 s.subspec 'Core' do |sp|
-  sp.dependency 'DTKit/DTRepresentations'
+    sp.source_files  = "DTKit/Core/**/*.{swift}"
+    sp.dependency 'DTKit/DTRepresentations'
 end
 
 
