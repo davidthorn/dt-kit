@@ -8,7 +8,7 @@
 import Foundation
 
 /// Enum used to define the type of text used to provide methods to handle more types.
-public enum TextType {
+public enum TextType: Hashable {
     /// Case to handle using just an optional string
     /// - Parameter value: The optional string that should be used.
     case text(value: String?)
