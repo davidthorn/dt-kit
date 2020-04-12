@@ -20,4 +20,21 @@ public extension String {
         with(attributes: [:])
     }
 
+    var isNotEmpty: Bool {
+        !isEmpty
+    }
+
+}
+
+public extension Optional where Wrapped == String {
+
+    var isNotEmpty: Bool {
+        switch self {
+        case .none:
+            return false
+        case .some(let value):
+            return value.isNotEmpty
+        }
+    }
+
 }
