@@ -78,6 +78,8 @@
 		9370A50D24430F5600BB340F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9370A50B24430F5600BB340F /* LaunchScreen.storyboard */; };
 		9370A51324430F5B00BB340F /* DTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9367C1A9243FFA49001D4E59 /* DTKit.framework */; };
 		9370A51424430F5B00BB340F /* DTKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9367C1A9243FFA49001D4E59 /* DTKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9370A5192443173C00BB340F /* CommonButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A5182443173C00BB340F /* CommonButtonType.swift */; };
+		9370A51B244317A200BB340F /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A51A244317A200BB340F /* CommonButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +188,8 @@
 		9370A50924430F5600BB340F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9370A50C24430F5600BB340F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9370A50E24430F5600BB340F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9370A5182443173C00BB340F /* CommonButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButtonType.swift; sourceTree = "<group>"; };
+		9370A51A244317A200BB340F /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,6 +408,8 @@
 				9370A49224430A5000BB340F /* CommonStackView.swift */,
 				9370A49324430A5000BB340F /* LabellSwitchView.swift */,
 				9370A49524430A5000BB340F /* LabelledInfoIcon.swift */,
+				9370A5182443173C00BB340F /* CommonButtonType.swift */,
+				9370A51A244317A200BB340F /* CommonButton.swift */,
 			);
 			path = DTCommon;
 			sourceTree = "<group>";
@@ -694,6 +700,8 @@
 				9370A4B424430A5000BB340F /* RepresentableSectionHeaderProtocol.swift in Sources */,
 				9370A4CD24430A5000BB340F /* CommonScrollView.swift in Sources */,
 				9370A4B224430A5000BB340F /* RepresentableViewModelProtocol.swift in Sources */,
+				9370A5192443173C00BB340F /* CommonButtonType.swift in Sources */,
+				9370A51B244317A200BB340F /* CommonButton.swift in Sources */,
 				9370A4C624430A5000BB340F /* CommonTextFieldViewModel.swift in Sources */,
 				9370A49F24430A5000BB340F /* FormFieldType.swift in Sources */,
 				9370A4F724430A5C00BB340F /* ValidateableCredentials.swift in Sources */,
