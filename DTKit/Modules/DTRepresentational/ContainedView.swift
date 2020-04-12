@@ -28,6 +28,15 @@ public final class ContainedView: CommonView, RepresentableRowProtocol {
         public var id: String
     }
 
+    public var identifier: String {
+        item.id
+    }
+
+    public static func create(with identifier: String) -> ContainedView {
+        let containedView = ContainedView()
+        containedView.childIdentifier = ContainedView.Identifier(id: identifier)
+        return containedView
+    }
 }
 
 public extension ContainedView {
