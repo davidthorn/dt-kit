@@ -10,12 +10,19 @@ import UIKit
 
 public typealias FormFieldEventHandler = (String, String?, UIControl.Event) -> Void
 
-public class FormField: RepresentalFactory {
+public class FormField {
+
+    private var fieldValue: String?
 
     public var eventHandler: FormFieldEventHandler?
-    private var fieldValue: String?
+    public var currentValue: String? {
+        get { fieldValue }
+        set { fieldValue = newValue }
+    }
+
     public let identifier: String
-    private let type: FormFieldType
+    public let type: FormFieldType
+    
     private lazy var commonTextViewModel: CommonTextFieldViewModel = {
         CommonTextFieldViewModel(identifier: identifier,
                                  value: fieldValue,
@@ -36,19 +43,8 @@ public class FormField: RepresentalFactory {
         eventHandler = handler
     }
 
-    private typealias FieldType = InputFieldViewModel<CommonTextFieldViewModel>
-    public func create() -> ContainedView {
-        fieldValue = value
-        switch type {
-        case .email:
-            return EmailFieldRepresentation<FieldType>(viewModel: viewModel).create()
-        case .number:
-            return NumberFieldRepresentation<FieldType>(viewModel: viewModel).create()
-        default:
-            return InputFieldRepresentation<FieldType>(viewModel: viewModel).create()
-        }
-    }
-
+    public typealias FieldType = InputFieldViewModel<CommonTextFieldViewModel>
+    
     public var labelText: NSAttributedString {
         switch type {
         case .email:
