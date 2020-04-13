@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ValidateableCredentials<T: LoginCredentialsProtocol>: Hashable {
+public struct ValidateableCredentials<T: EmailPasswordCredentialsProtocol & Decodable>: Hashable {
 
     private var _email: String?
     public var email: String? {
@@ -39,17 +39,17 @@ public struct ValidateableCredentials<T: LoginCredentialsProtocol>: Hashable {
         var email: String?
         var password: String?
 
-        func isValid() -> LoginCredentialsProtocol? {
+        func isValid() -> T? {
             do {
                 let encoded = try JSONEncoder().encode(self)
-                return try JSONDecoder().decode(LoginCredentials.self, from: encoded)
+                return try JSONDecoder().decode(T.self, from: encoded)
             } catch {
                 return nil
             }
         }
     }
 
-    public func validate() -> LoginCredentialsProtocol? {
+    public func validate() -> T? {
         let credentials = Credentials(email: email, password: password)
         return credentials.isValid()
     }
