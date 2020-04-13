@@ -66,9 +66,7 @@
 		9370A4F124430A5C00BB340F /* TextType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A4DE24430A5C00BB340F /* TextType.swift */; };
 		9370A4F224430A5C00BB340F /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A4E024430A5C00BB340F /* UIStackView.swift */; };
 		9370A4F324430A5C00BB340F /* EmailPasswordCredentialsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A4E324430A5C00BB340F /* EmailPasswordCredentialsProtocol.swift */; };
-		9370A4F424430A5C00BB340F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A4E424430A5C00BB340F /* LoginViewModel.swift */; };
 		9370A4F524430A5C00BB340F /* EmailPasswordCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A4E524430A5C00BB340F /* EmailPasswordCredentials.swift */; };
-		9370A4F624430A5C00BB340F /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A4E624430A5C00BB340F /* LoginViewModelProtocol.swift */; };
 		9370A4F724430A5C00BB340F /* ValidateableCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A4E724430A5C00BB340F /* ValidateableCredentials.swift */; };
 		9370A4F824430A5C00BB340F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A4E824430A5C00BB340F /* LoginViewController.swift */; };
 		9370A50124430F5400BB340F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A50024430F5400BB340F /* AppDelegate.swift */; };
@@ -189,9 +187,7 @@
 		9370A4DE24430A5C00BB340F /* TextType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextType.swift; sourceTree = "<group>"; };
 		9370A4E024430A5C00BB340F /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		9370A4E324430A5C00BB340F /* EmailPasswordCredentialsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailPasswordCredentialsProtocol.swift; sourceTree = "<group>"; };
-		9370A4E424430A5C00BB340F /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		9370A4E524430A5C00BB340F /* EmailPasswordCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailPasswordCredentials.swift; sourceTree = "<group>"; };
-		9370A4E624430A5C00BB340F /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
 		9370A4E724430A5C00BB340F /* ValidateableCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateableCredentials.swift; sourceTree = "<group>"; };
 		9370A4E824430A5C00BB340F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9370A4FE24430F5400BB340F /* DTKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DTKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -494,8 +490,6 @@
 		9370A4E224430A5C00BB340F /* LoginPage */ = {
 			isa = PBXGroup;
 			children = (
-				9370A4E424430A5C00BB340F /* LoginViewModel.swift */,
-				9370A4E624430A5C00BB340F /* LoginViewModelProtocol.swift */,
 				9370A4E824430A5C00BB340F /* LoginViewController.swift */,
 			);
 			path = LoginPage;
@@ -722,7 +716,6 @@
 				938FABA8244341770042942D /* CommonSecondaryButton.swift in Sources */,
 				9370A4A024430A5000BB340F /* FieldInfo.swift in Sources */,
 				9370A4BB24430A5000BB340F /* DTKitCustomTableviewCell.swift in Sources */,
-				9370A4F624430A5C00BB340F /* LoginViewModelProtocol.swift in Sources */,
 				9370A4EB24430A5C00BB340F /* CommonHeaderTitle.swift in Sources */,
 				9370A49724430A5000BB340F /* Array.swift in Sources */,
 				9370A49A24430A5000BB340F /* Optional.swift in Sources */,
@@ -737,7 +730,6 @@
 				93C5A2562443A19C00C2E941 /* CommonLabelView.swift in Sources */,
 				9370A4D124430A5000BB340F /* LabelledInfoIcon.swift in Sources */,
 				9370A4CE24430A5000BB340F /* CommonStackView.swift in Sources */,
-				9370A4F424430A5C00BB340F /* LoginViewModel.swift in Sources */,
 				9370A4CB24430A5000BB340F /* CommonControl.swift in Sources */,
 				9370A4B924430A5000BB340F /* RepresentationalItem.swift in Sources */,
 				9370A4B824430A5000BB340F /* ContainedView.swift in Sources */,

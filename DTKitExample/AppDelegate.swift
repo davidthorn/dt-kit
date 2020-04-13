@@ -29,11 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func rootViewController() -> UIViewController {
-        let initialCredentials = LoginCredentials()
-        let loginViewModel = LoginViewModel(credentials: initialCredentials) { receivedCredentials in
-            debugPrint(receivedCredentials)
-        }
-        let viewController = LoginViewController<LoginViewModel>.init(viewModel: loginViewModel)
+        let initialCredentials = EmailPasswordCredentials()
+        let loginViewModel = EmailPasswordLoginViewModel(email: initialCredentials.email,
+                                                         password: initialCredentials.password)
+
+        let viewController = LoginViewController<EmailPasswordLoginViewModel>.init(viewModel: loginViewModel)
         viewController.title = "Default View Controller"
         return viewController
     }
