@@ -110,3 +110,16 @@ public extension NSAttributedString {
     }
 
 }
+
+public extension TextType {
+
+    var containedView: ContainedView {
+        switch self {
+        case .attributed(let text):
+            return text?.containedView ?? .empty
+        case .text(let value):
+            return value?.containedView ?? .empty
+        }
+    }
+
+}
