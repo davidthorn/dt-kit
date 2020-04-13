@@ -20,15 +20,17 @@ public final class EmailPasswordLoginViewModel: EmailPasswordLoginViewModelType 
 
     public var password: String?
 
-    public var receivedNewCredentials: (EmailPasswordCredentials) -> Void
+    public var receivedNewCredentials: (EmailPasswordCredentials) -> Void = { _ in }
 
     public init(email: String?,
                 password: String?,
-                receivedNewCredentials: @escaping (EmailPasswordCredentials) -> Void) {
+                receivedNewCredentials: ((EmailPasswordCredentials) -> Void)? = nil) {
 
         self.email = email
         self.password = password
-        self.receivedNewCredentials = receivedNewCredentials
+        if let handler = receivedNewCredentials {
+            self.receivedNewCredentials = handler
+        }
     }
 
     public static func == (lhs: EmailPasswordLoginViewModel, rhs: EmailPasswordLoginViewModel) -> Bool {

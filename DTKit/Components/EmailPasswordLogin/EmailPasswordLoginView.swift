@@ -95,7 +95,7 @@ open class EmailPasswordLoginView<T: EmailPasswordLoginViewModelType>: CommonVie
     // MARK: FormFields and FieldInfo
 
     private lazy var emailFieldInfo: FieldInfo = .email(value: viewModel?.email)
-    private lazy var passwordFieldInfo: FieldInfo = .email(value: viewModel?.password)
+    private lazy var passwordFieldInfo: FieldInfo = .password(value: viewModel?.password)
 
     private lazy var fieldInfos: [FieldInfo] = {
         [
