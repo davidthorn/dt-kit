@@ -91,6 +91,7 @@
 		93C5A25B24445F5E00C2E941 /* EmailPasswordLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C5A25A24445F5E00C2E941 /* EmailPasswordLoginView.swift */; };
 		93C5A25D244467F300C2E941 /* EmailPasswordLoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C5A25C244467F300C2E941 /* EmailPasswordLoginViewModelProtocol.swift */; };
 		93C5A25F24446C7100C2E941 /* EmailPasswordLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C5A25E24446C7100C2E941 /* EmailPasswordLoginViewModel.swift */; };
+		93C5A2622444754A00C2E941 /* FAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C5A2612444754A00C2E941 /* FAButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +213,7 @@
 		93C5A25A24445F5E00C2E941 /* EmailPasswordLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPasswordLoginView.swift; sourceTree = "<group>"; };
 		93C5A25C244467F300C2E941 /* EmailPasswordLoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPasswordLoginViewModelProtocol.swift; sourceTree = "<group>"; };
 		93C5A25E24446C7100C2E941 /* EmailPasswordLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPasswordLoginViewModel.swift; sourceTree = "<group>"; };
+		93C5A2612444754A00C2E941 /* FAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -526,6 +528,7 @@
 		938FABA6244341660042942D /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				93C5A2602444751900C2E941 /* FAButton */,
 				9370A5182443173C00BB340F /* CommonButtonType.swift */,
 				9370A51A244317A200BB340F /* CommonButton.swift */,
 				938FABA7244341770042942D /* CommonSecondaryButton.swift */,
@@ -564,6 +567,14 @@
 				9370A4E324430A5C00BB340F /* EmailPasswordCredentialsProtocol.swift */,
 			);
 			path = EmailPasswordLogin;
+			sourceTree = "<group>";
+		};
+		93C5A2602444751900C2E941 /* FAButton */ = {
+			isa = PBXGroup;
+			children = (
+				93C5A2612444754A00C2E941 /* FAButton.swift */,
+			);
+			path = FAButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -758,6 +769,7 @@
 				9370A4F124430A5C00BB340F /* TextType.swift in Sources */,
 				9370A4BF24430A5000BB340F /* FormFieldName.swift in Sources */,
 				9370A4AA24430A5000BB340F /* InputFieldViewModelProtocol.swift in Sources */,
+				93C5A2622444754A00C2E941 /* FAButton.swift in Sources */,
 				9370A4C924430A5000BB340F /* CommonTableViewController.swift in Sources */,
 				9370A4B624430A5000BB340F /* RepresentableRowProtocol.swift in Sources */,
 				9370A4B324430A5000BB340F /* RowIdentifier.swift in Sources */,

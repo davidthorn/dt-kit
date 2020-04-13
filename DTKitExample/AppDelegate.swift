@@ -29,13 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func rootViewController() -> UIViewController {
-        let initialCredentials = EmailPasswordCredentials()
-        let loginViewModel = EmailPasswordLoginViewModel(email: initialCredentials.email,
-                                                         password: initialCredentials.password)
-
-        let viewController = LoginViewController<EmailPasswordLoginViewModel>.init(viewModel: loginViewModel)
-        viewController.title = "Default View Controller"
-        return viewController
+        ViewController()
     }
 
     private func shouldUseNavigationController() -> Bool {

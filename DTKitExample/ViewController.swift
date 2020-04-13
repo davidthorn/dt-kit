@@ -20,6 +20,8 @@ class ViewController: UIViewController {
 
         edgesForExtendedLayout = []
 
+        let fabButton = FAButton()
+        
         let commonButton: CommonButton = .common
         commonButton.setTitle("Common", for: .normal)
 
@@ -49,6 +51,7 @@ class ViewController: UIViewController {
         stackView.addArrangedSubview(primaryButton)
         stackView.addArrangedSubview(secondaryButton)
         stackView.addArrangedSubview(disabledButton)
+        stackView.addArrangedSubview(fabButton)
 
     }
 
