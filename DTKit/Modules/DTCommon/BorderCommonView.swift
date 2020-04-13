@@ -14,7 +14,7 @@ public final class BorderCommonView: CommonView {
         super.layoutSubviews()
 
         layer.cornerRadius = 5
-        layer.borderColor = UIColor.darkGray.cgColor
+        layer.borderColor = UIColor.darkGray.withAlphaComponent(0.4).cgColor
         layer.borderWidth = 1
     }
 

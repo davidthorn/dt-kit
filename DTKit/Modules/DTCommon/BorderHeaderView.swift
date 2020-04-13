@@ -67,7 +67,7 @@ open class BorderHeaderView: CommonView {
         clipsToBounds = true
         header.layer.masksToBounds = true
         
-        layer.borderColor = UIColor.lightGray.cgColor
+        layer.borderColor = UIColor.lightGray.withAlphaComponent(0.4).cgColor
         layer.borderWidth = 1
         layer.cornerRadius = 5
     }
