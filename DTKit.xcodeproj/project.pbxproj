@@ -65,9 +65,9 @@
 		9370A4F024430A5C00BB340F /* FormButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A4DC24430A5C00BB340F /* FormButtonViewModel.swift */; };
 		9370A4F124430A5C00BB340F /* TextType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A4DE24430A5C00BB340F /* TextType.swift */; };
 		9370A4F224430A5C00BB340F /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A4E024430A5C00BB340F /* UIStackView.swift */; };
-		9370A4F324430A5C00BB340F /* LoginCredentialsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A4E324430A5C00BB340F /* LoginCredentialsProtocol.swift */; };
+		9370A4F324430A5C00BB340F /* EmailPasswordCredentialsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A4E324430A5C00BB340F /* EmailPasswordCredentialsProtocol.swift */; };
 		9370A4F424430A5C00BB340F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A4E424430A5C00BB340F /* LoginViewModel.swift */; };
-		9370A4F524430A5C00BB340F /* LoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A4E524430A5C00BB340F /* LoginCredentials.swift */; };
+		9370A4F524430A5C00BB340F /* EmailPasswordCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A4E524430A5C00BB340F /* EmailPasswordCredentials.swift */; };
 		9370A4F624430A5C00BB340F /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A4E624430A5C00BB340F /* LoginViewModelProtocol.swift */; };
 		9370A4F724430A5C00BB340F /* ValidateableCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A4E724430A5C00BB340F /* ValidateableCredentials.swift */; };
 		9370A4F824430A5C00BB340F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A4E824430A5C00BB340F /* LoginViewController.swift */; };
@@ -90,6 +90,9 @@
 		93C5A2552443A19C00C2E941 /* CommonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C5A2522443A19C00C2E941 /* CommonLabel.swift */; };
 		93C5A2562443A19C00C2E941 /* CommonLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C5A2532443A19C00C2E941 /* CommonLabelView.swift */; };
 		93C5A2572443A19C00C2E941 /* BorderHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C5A2542443A19C00C2E941 /* BorderHeaderView.swift */; };
+		93C5A25B24445F5E00C2E941 /* EmailPasswordLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C5A25A24445F5E00C2E941 /* EmailPasswordLoginView.swift */; };
+		93C5A25D244467F300C2E941 /* EmailPasswordLoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C5A25C244467F300C2E941 /* EmailPasswordLoginViewModelProtocol.swift */; };
+		93C5A25F24446C7100C2E941 /* EmailPasswordLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C5A25E24446C7100C2E941 /* EmailPasswordLoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,9 +188,9 @@
 		9370A4DC24430A5C00BB340F /* FormButtonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormButtonViewModel.swift; sourceTree = "<group>"; };
 		9370A4DE24430A5C00BB340F /* TextType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextType.swift; sourceTree = "<group>"; };
 		9370A4E024430A5C00BB340F /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
-		9370A4E324430A5C00BB340F /* LoginCredentialsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCredentialsProtocol.swift; sourceTree = "<group>"; };
+		9370A4E324430A5C00BB340F /* EmailPasswordCredentialsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailPasswordCredentialsProtocol.swift; sourceTree = "<group>"; };
 		9370A4E424430A5C00BB340F /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		9370A4E524430A5C00BB340F /* LoginCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCredentials.swift; sourceTree = "<group>"; };
+		9370A4E524430A5C00BB340F /* EmailPasswordCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailPasswordCredentials.swift; sourceTree = "<group>"; };
 		9370A4E624430A5C00BB340F /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
 		9370A4E724430A5C00BB340F /* ValidateableCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateableCredentials.swift; sourceTree = "<group>"; };
 		9370A4E824430A5C00BB340F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +213,9 @@
 		93C5A2522443A19C00C2E941 /* CommonLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonLabel.swift; sourceTree = "<group>"; };
 		93C5A2532443A19C00C2E941 /* CommonLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonLabelView.swift; sourceTree = "<group>"; };
 		93C5A2542443A19C00C2E941 /* BorderHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderHeaderView.swift; sourceTree = "<group>"; };
+		93C5A25A24445F5E00C2E941 /* EmailPasswordLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPasswordLoginView.swift; sourceTree = "<group>"; };
+		93C5A25C244467F300C2E941 /* EmailPasswordLoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPasswordLoginViewModelProtocol.swift; sourceTree = "<group>"; };
+		93C5A25E24446C7100C2E941 /* EmailPasswordLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPasswordLoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +270,7 @@
 		9367C1AB243FFA49001D4E59 /* DTKit */ = {
 			isa = PBXGroup;
 			children = (
+				93C5A25824445F3900C2E941 /* Components */,
 				9370A4F924430D0C00BB340F /* Features */,
 				9370A4D224430A5C00BB340F /* Core */,
 				9370A44C24430A5000BB340F /* Modules */,
@@ -487,11 +494,8 @@
 		9370A4E224430A5C00BB340F /* LoginPage */ = {
 			isa = PBXGroup;
 			children = (
-				9370A4E324430A5C00BB340F /* LoginCredentialsProtocol.swift */,
 				9370A4E424430A5C00BB340F /* LoginViewModel.swift */,
-				9370A4E524430A5C00BB340F /* LoginCredentials.swift */,
 				9370A4E624430A5C00BB340F /* LoginViewModelProtocol.swift */,
-				9370A4E724430A5C00BB340F /* ValidateableCredentials.swift */,
 				9370A4E824430A5C00BB340F /* LoginViewController.swift */,
 			);
 			path = LoginPage;
@@ -545,6 +549,27 @@
 				93C5A24F2443A17100C2E941 /* CommonLabelRepresentation.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		93C5A25824445F3900C2E941 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				93C5A25924445F4300C2E941 /* EmailPasswordLogin */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		93C5A25924445F4300C2E941 /* EmailPasswordLogin */ = {
+			isa = PBXGroup;
+			children = (
+				9370A4E524430A5C00BB340F /* EmailPasswordCredentials.swift */,
+				93C5A25A24445F5E00C2E941 /* EmailPasswordLoginView.swift */,
+				93C5A25C244467F300C2E941 /* EmailPasswordLoginViewModelProtocol.swift */,
+				93C5A25E24446C7100C2E941 /* EmailPasswordLoginViewModel.swift */,
+				9370A4E724430A5C00BB340F /* ValidateableCredentials.swift */,
+				9370A4E324430A5C00BB340F /* EmailPasswordCredentialsProtocol.swift */,
+			);
+			path = EmailPasswordLogin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -703,10 +728,11 @@
 				9370A49A24430A5000BB340F /* Optional.swift in Sources */,
 				9370A4BA24430A5000BB340F /* RepresentationalSection.swift in Sources */,
 				9370A4EC24430A5C00BB340F /* HeaderSection.swift in Sources */,
+				93C5A25D244467F300C2E941 /* EmailPasswordLoginViewModelProtocol.swift in Sources */,
 				9370A4CA24430A5000BB340F /* CommonViewController.swift in Sources */,
 				9370A4CF24430A5000BB340F /* LabellSwitchView.swift in Sources */,
 				9370A4C524430A5000BB340F /* CommonView.swift in Sources */,
-				9370A4F524430A5C00BB340F /* LoginCredentials.swift in Sources */,
+				9370A4F524430A5C00BB340F /* EmailPasswordCredentials.swift in Sources */,
 				938FABAC244341940042942D /* CommonDisabledButton.swift in Sources */,
 				93C5A2562443A19C00C2E941 /* CommonLabelView.swift in Sources */,
 				9370A4D124430A5000BB340F /* LabelledInfoIcon.swift in Sources */,
@@ -726,6 +752,7 @@
 				9370A51D244330A700BB340F /* CommonButtonRepresentation.swift in Sources */,
 				9370A4B724430A5000BB340F /* RepresentableSectionProtocol.swift in Sources */,
 				9370A4BE24430A5000BB340F /* RepresentableViewController.swift in Sources */,
+				93C5A25B24445F5E00C2E941 /* EmailPasswordLoginView.swift in Sources */,
 				9370A4EE24430A5C00BB340F /* FormButtonViewModelProtocol.swift in Sources */,
 				9370A4A124430A5000BB340F /* FormField.swift in Sources */,
 				9370A4A424430A5000BB340F /* Constraint.swift in Sources */,
@@ -743,7 +770,7 @@
 				9370A4B624430A5000BB340F /* RepresentableRowProtocol.swift in Sources */,
 				9370A4B324430A5000BB340F /* RowIdentifier.swift in Sources */,
 				9370A4CC24430A5000BB340F /* BorderCommonView.swift in Sources */,
-				9370A4F324430A5C00BB340F /* LoginCredentialsProtocol.swift in Sources */,
+				9370A4F324430A5C00BB340F /* EmailPasswordCredentialsProtocol.swift in Sources */,
 				9370A4B524430A5000BB340F /* RepresentalFactory.swift in Sources */,
 				9370A4A724430A5000BB340F /* InputField.swift in Sources */,
 				9370A4C824430A5000BB340F /* CommonTextFieldViewModelProtocol.swift in Sources */,
@@ -754,6 +781,7 @@
 				9370A4CD24430A5000BB340F /* CommonScrollView.swift in Sources */,
 				9370A4B224430A5000BB340F /* RepresentableViewModelProtocol.swift in Sources */,
 				9370A5192443173C00BB340F /* CommonButtonType.swift in Sources */,
+				93C5A25F24446C7100C2E941 /* EmailPasswordLoginViewModel.swift in Sources */,
 				938FABAA244341860042942D /* CommonPrimaryButton.swift in Sources */,
 				9370A51B244317A200BB340F /* CommonButton.swift in Sources */,
 				9370A4C624430A5000BB340F /* CommonTextFieldViewModel.swift in Sources */,
