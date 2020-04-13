@@ -46,6 +46,8 @@ public extension ContainedView {
         subviews.first as? CommonButton
     }
 
+    static let empty: ContainedView = ContainedView()
+
 }
 
 
