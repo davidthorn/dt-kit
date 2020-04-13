@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol LoginCredentialsProtocol {
+public protocol EmailPasswordCredentialsProtocol {
     var email: String { get }
     var password: String { get }
     init(email: String, password: String)

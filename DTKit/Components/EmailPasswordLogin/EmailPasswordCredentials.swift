@@ -7,12 +7,12 @@
 
 import Foundation
 
-public struct LoginCredentials: LoginCredentialsProtocol, Codable {
+public struct EmailPasswordCredentials: EmailPasswordCredentialsProtocol, Codable, Hashable {
 
     public var email: String
     public var password: String
 
-    public static let empty = LoginCredentials()
+    public static let empty = EmailPasswordCredentials()
 
     public init() {
         email = ""
