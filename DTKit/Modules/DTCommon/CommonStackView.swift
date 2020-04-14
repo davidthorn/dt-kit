@@ -18,4 +18,13 @@ open class CommonStackView: UIStackView {
         stackView.spacing = 8
         return stackView
     }
+
+    public static var horizontal: CommonStackView {
+        let stackView = CommonStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fillProportionally
+        stackView.alignment = .leading
+        stackView.spacing = 0
+        return stackView
+    }
 }
