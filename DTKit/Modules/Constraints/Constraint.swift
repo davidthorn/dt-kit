@@ -158,6 +158,30 @@ public extension UIView {
     }
 
     @discardableResult
+    func width(equalTo: NSLayoutDimension, multiplier: CGFloat, priority: UILayoutPriority = .required) -> NSLayoutConstraint {
+        constrain()
+
+        let constraint = widthAnchor.constraint(equalTo: equalTo, multiplier: multiplier)
+        constraint.priority = priority
+        NSLayoutConstraint.activate([
+            constraint
+        ])
+        return constraint
+    }
+
+    @discardableResult
+    func height(equalTo: NSLayoutDimension, multiplier: CGFloat, priority: UILayoutPriority = .required) -> NSLayoutConstraint {
+        constrain()
+
+        let constraint = heightAnchor.constraint(equalTo: equalTo, multiplier: multiplier)
+        constraint.priority = priority
+        NSLayoutConstraint.activate([
+            constraint
+        ])
+        return constraint
+    }
+
+    @discardableResult
     func width(view: UIView, multiplier: CGFloat = 1) -> NSLayoutConstraint {
         constrain()
         let widthConstraint = widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: multiplier)
@@ -208,11 +232,23 @@ public extension UIView {
     }
 
     func center(insets: UIEdgeInsets) {
+        centerX(insets: insets)
+        centerY(insets: insets)
+    }
+
+    func centerY(insets: UIEdgeInsets) {
         guard let parentView = constrain()?.superview else { fatalError("View has not been added to parent") }
-        
+
         NSLayoutConstraint.activate([
-            centerXAnchor.constraint(equalTo: parentView.centerXAnchor, constant: insets.left),
             centerYAnchor.constraint(equalTo: parentView.centerYAnchor, constant: insets.top)
+        ])
+    }
+
+    func centerX(insets: UIEdgeInsets) {
+        guard let parentView = constrain()?.superview else { fatalError("View has not been added to parent") }
+
+        NSLayoutConstraint.activate([
+            centerXAnchor.constraint(equalTo: parentView.centerXAnchor, constant: insets.left)
         ])
     }
 }
