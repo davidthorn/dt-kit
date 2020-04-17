@@ -53,7 +53,7 @@
 		9370A4CA24430A5000BB340F /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A48E24430A5000BB340F /* CommonViewController.swift */; };
 		9370A4CB24430A5000BB340F /* CommonControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A48F24430A5000BB340F /* CommonControl.swift */; };
 		9370A4CC24430A5000BB340F /* BorderCommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A49024430A5000BB340F /* BorderCommonView.swift */; };
-		9370A4CD24430A5000BB340F /* CommonScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A49124430A5000BB340F /* CommonScrollView.swift */; };
+		9370A4CD24430A5000BB340F /* CommonScrollableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A49124430A5000BB340F /* CommonScrollableStackView.swift */; };
 		9370A4CE24430A5000BB340F /* CommonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A49224430A5000BB340F /* CommonStackView.swift */; };
 		9370A4CF24430A5000BB340F /* LabellSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A49324430A5000BB340F /* LabellSwitchView.swift */; };
 		9370A4D124430A5000BB340F /* LabelledInfoIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370A49524430A5000BB340F /* LabelledInfoIcon.swift */; };
@@ -174,7 +174,7 @@
 		9370A48E24430A5000BB340F /* CommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
 		9370A48F24430A5000BB340F /* CommonControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonControl.swift; sourceTree = "<group>"; };
 		9370A49024430A5000BB340F /* BorderCommonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderCommonView.swift; sourceTree = "<group>"; };
-		9370A49124430A5000BB340F /* CommonScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonScrollView.swift; sourceTree = "<group>"; };
+		9370A49124430A5000BB340F /* CommonScrollableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonScrollableStackView.swift; sourceTree = "<group>"; };
 		9370A49224430A5000BB340F /* CommonStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonStackView.swift; sourceTree = "<group>"; };
 		9370A49324430A5000BB340F /* LabellSwitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabellSwitchView.swift; sourceTree = "<group>"; };
 		9370A49524430A5000BB340F /* LabelledInfoIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelledInfoIcon.swift; sourceTree = "<group>"; };
@@ -433,7 +433,7 @@
 				9370A48E24430A5000BB340F /* CommonViewController.swift */,
 				9370A48F24430A5000BB340F /* CommonControl.swift */,
 				9370A49024430A5000BB340F /* BorderCommonView.swift */,
-				9370A49124430A5000BB340F /* CommonScrollView.swift */,
+				9370A49124430A5000BB340F /* CommonScrollableStackView.swift */,
 				9370A49224430A5000BB340F /* CommonStackView.swift */,
 				9370A49324430A5000BB340F /* LabellSwitchView.swift */,
 				9370A49524430A5000BB340F /* LabelledInfoIcon.swift */,
@@ -770,7 +770,7 @@
 				9370A49924430A5000BB340F /* UILabel.swift in Sources */,
 				9370A4B424430A5000BB340F /* RepresentableSectionHeaderProtocol.swift in Sources */,
 				93C5A2572443A19C00C2E941 /* BorderHeaderView.swift in Sources */,
-				9370A4CD24430A5000BB340F /* CommonScrollView.swift in Sources */,
+				9370A4CD24430A5000BB340F /* CommonScrollableStackView.swift in Sources */,
 				9370A4B224430A5000BB340F /* RepresentableViewModelProtocol.swift in Sources */,
 				9370A5192443173C00BB340F /* CommonButtonType.swift in Sources */,
 				93C5A25F24446C7100C2E941 /* EmailPasswordLoginViewModel.swift in Sources */,

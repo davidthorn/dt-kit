@@ -17,7 +17,7 @@ open class EmailPasswordLoginView<T: EmailPasswordLoginViewModelType>: CommonVie
 
     // MARK: Private Properties
 
-    private let scrollView = CommonScrollView()
+    private let scrollView = CommonScrollableStackView()
     private let stackViewWrapper = CommonView()
     private let stackView: CommonStackView = .vertical
 
