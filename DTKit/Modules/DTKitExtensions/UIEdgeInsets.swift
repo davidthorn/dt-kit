@@ -29,6 +29,32 @@ public extension UIEdgeInsets {
     init(value: CGFloat) {
         self.init(top: value, left: value, bottom: value, right: value)
     }
+
+    /// Creates a UIEdgeInsets
+    /// - Parameters:
+    ///   - top: The top value used if the vertical parameter is nil
+    ///   - bottom: The top value used if the vertical parameter is nil
+    ///   - left: The top value used if the horizontal parameter is nil
+    ///   - right: The top value used if the horizontal parameter is nil
+    ///   - horizontal: The value used for left and right is not nil
+    ///   - vertical: The value used for top and bottom is not nil
+    init(
+        top: CGFloat = 0,
+        bottom: CGFloat = 0,
+        left: CGFloat = 0,
+        right: CGFloat = 0,
+        horizontal: CGFloat? = nil,
+        vertical: CGFloat? = nil
+    ) {
+
+        self.init(
+            top: vertical ?? top,
+            left: horizontal ?? left,
+            bottom: vertical ?? bottom,
+            right: horizontal ?? right
+        )
+    }
+
 }
 
 
