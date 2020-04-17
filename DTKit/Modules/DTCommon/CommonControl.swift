@@ -17,6 +17,7 @@ open class CommonControl: UIControl {
     public init(tapHandler: @escaping CommonTapHandler) {
         self.tapHandler = tapHandler
         super.init(frame: .zero)
+        commonInit()
     }
 
     override init(frame: CGRect) {
@@ -27,8 +28,7 @@ open class CommonControl: UIControl {
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
-        addTarget(self, action: #selector(onTouchUpInsideSelector), for: .touchUpInside)
-        addTarget(self, action: #selector(onTouchDownSelector), for: .touchDown)
+
     }
 
     @objc private func onTouchUpInsideSelector() {
@@ -39,12 +39,15 @@ open class CommonControl: UIControl {
         onTouchDown()
     }
 
-    open func commonInit() { }
+    open func commonInit() {
+        addTarget(self, action: #selector(onTouchUpInsideSelector), for: .touchUpInside)
+        addTarget(self, action: #selector(onTouchDownSelector), for: .touchDown)
+    }
 
-    open func onTouchUpInside() { }
-
-    open func onTouchDown() {
+    open func onTouchUpInside() {
         tapHandler?(self)
     }
+
+    open func onTouchDown() { }
 
 }
