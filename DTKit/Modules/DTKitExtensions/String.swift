@@ -5,7 +5,7 @@
 //  Created by Thorn, David on 10.04.20.
 //
 
-import Foundation
+import UIKit
 
 public extension String {
 
@@ -22,6 +22,29 @@ public extension String {
 
     var isNotEmpty: Bool {
         !isEmpty
+    }
+
+    /// Creates an attributed string using the parameters.
+    /// - Parameters:
+    ///   - textColor: The color that should be used for the foregroundColor attribute
+    ///   - font: The font that should be used for the font attribute
+    func with(
+        textColor: UIColor? = nil,
+        font: UIFont? = nil
+    ) -> NSAttributedString  {
+
+        var attributes = [NSAttributedString.Key: Any]()
+
+        if let color = textColor {
+            attributes[.foregroundColor] = color
+        }
+
+        if let font = font {
+            attributes[.font] = font
+        }
+
+        return with(attributes: attributes)
+
     }
 
 }
