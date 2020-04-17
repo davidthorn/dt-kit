@@ -87,6 +87,7 @@
 		938FABAA244341860042942D /* CommonPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938FABA9244341860042942D /* CommonPrimaryButton.swift */; };
 		938FABAC244341940042942D /* CommonDisabledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938FABAB244341940042942D /* CommonDisabledButton.swift */; };
 		938FABAE244341DF0042942D /* CommonDestructiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938FABAD244341DF0042942D /* CommonDestructiveButton.swift */; };
+		93B475EB244A12A400880F0F /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B475EA244A12A400880F0F /* CGSize.swift */; };
 		93C5A2502443A17100C2E941 /* BorderHeaderRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C5A24E2443A17100C2E941 /* BorderHeaderRepresentation.swift */; };
 		93C5A2512443A17100C2E941 /* CommonLabelRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C5A24F2443A17100C2E941 /* CommonLabelRepresentation.swift */; };
 		93C5A2552443A19C00C2E941 /* CommonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C5A2522443A19C00C2E941 /* CommonLabel.swift */; };
@@ -212,6 +213,7 @@
 		938FABA9244341860042942D /* CommonPrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonPrimaryButton.swift; sourceTree = "<group>"; };
 		938FABAB244341940042942D /* CommonDisabledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDisabledButton.swift; sourceTree = "<group>"; };
 		938FABAD244341DF0042942D /* CommonDestructiveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDestructiveButton.swift; sourceTree = "<group>"; };
+		93B475EA244A12A400880F0F /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
 		93C5A24E2443A17100C2E941 /* BorderHeaderRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderHeaderRepresentation.swift; sourceTree = "<group>"; };
 		93C5A24F2443A17100C2E941 /* CommonLabelRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonLabelRepresentation.swift; sourceTree = "<group>"; };
 		93C5A2522443A19C00C2E941 /* CommonLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonLabel.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 		9370A44D24430A5000BB340F /* DTKitExtensions */ = {
 			isa = PBXGroup;
 			children = (
+				93B475EA244A12A400880F0F /* CGSize.swift */,
 				9370A4E024430A5C00BB340F /* UIStackView.swift */,
 				9370A44E24430A5000BB340F /* UIView.swift */,
 				9370A44F24430A5000BB340F /* Array.swift */,
@@ -770,6 +773,7 @@
 				9370A4A124430A5000BB340F /* FormField.swift in Sources */,
 				938A0A152449684E00AE2E74 /* DisclosureButton.swift in Sources */,
 				9370A4A424430A5000BB340F /* Constraint.swift in Sources */,
+				93B475EB244A12A400880F0F /* CGSize.swift in Sources */,
 				9370A4AC24430A5000BB340F /* FormFieldFactory.swift in Sources */,
 				93C5A2512443A17100C2E941 /* CommonLabelRepresentation.swift in Sources */,
 				9370A49D24430A5000BB340F /* UIEdgeInsets.swift in Sources */,
