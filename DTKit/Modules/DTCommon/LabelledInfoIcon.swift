@@ -14,7 +14,7 @@ public final class LabelledInfoIcon: CommonView {
     
     private let imageView = UIImageView()
     private let label = UILabel()
-    private lazy var width = imageView.width(constant: 0)
+    private lazy var widthConstraint = imageView.width(constant: 0)
     private var iconTapHandler: LabelledInfoIconHandler = { }
     
     public var edgeInsets: UIEdgeInsets { return .init(top: 10, left: 10, bottom: 10, right: 10) }
@@ -26,7 +26,7 @@ public final class LabelledInfoIcon: CommonView {
         
         label.text = labelText
         let image = UIImage(named: imageName, in: bundle, compatibleWith: nil)
-        width.constant = image?.size.width ?? 0
+        widthConstraint.constant = image?.size.width ?? 0
         imageView.image = image
         if let handler = onIconTapped {
             iconTapHandler = handler

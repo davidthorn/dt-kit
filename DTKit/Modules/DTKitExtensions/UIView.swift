@@ -31,5 +31,21 @@ public extension UIView {
         }
         
     }
+
+    /// The value of the bounds height property
+    var height: CGFloat {
+        bounds.size.height
+    }
+
+    /// The value of the bounds width property
+    var width: CGFloat {
+        bounds.size.width
+    }
+
+    /// The bounds size property
+    var size: CGSize {
+        bounds.size
+    }
+
     
 }
