@@ -52,7 +52,6 @@ open class CommonScrollableStackView: UIScrollView {
         containerView.edgesToSuperview()
         containerView.width(view: self)
         containerView.addSubview(stackView)
-        stackView.edgesToSuperview()
         stackView.edgesToSuperview(insets: constants.stackviewInsets)
         setup(constants: constants)
     }
@@ -64,6 +63,7 @@ open class CommonScrollableStackView: UIScrollView {
 
     public func add(subviews: [UIView]) {
         stackView.addArrangedSubviews(views: subviews)
+        stackView.layoutIfNeeded()
     }
 
     open override func layoutSubviews() {
