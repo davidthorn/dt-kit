@@ -11,6 +11,8 @@
 		93340EE2244AEFD8008CBCC6 /* CommonControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93340EE1244AEFD8008CBCC6 /* CommonControlTests.swift */; };
 		93340EE4244AF6FC008CBCC6 /* CommonStackViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93340EE3244AF6FC008CBCC6 /* CommonStackViewTests.swift */; };
 		93340EE6244B0581008CBCC6 /* CommonButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93340EE5244B0581008CBCC6 /* CommonButtonTests.swift */; };
+		93340EE8244B74F2008CBCC6 /* CommonImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93340EE7244B74F2008CBCC6 /* CommonImageViewTests.swift */; };
+		93340EEA244B7737008CBCC6 /* DTKitAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93340EE9244B7737008CBCC6 /* DTKitAssets.xcassets */; };
 		9367C1B3243FFA4A001D4E59 /* DTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9367C1A9243FFA49001D4E59 /* DTKit.framework */; };
 		9367C1B8243FFA4A001D4E59 /* DTKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367C1B7243FFA4A001D4E59 /* DTKitTests.swift */; };
 		9367C1BA243FFA4A001D4E59 /* DTKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9367C1AC243FFA49001D4E59 /* DTKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -135,6 +137,8 @@
 		93340EE1244AEFD8008CBCC6 /* CommonControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonControlTests.swift; sourceTree = "<group>"; };
 		93340EE3244AF6FC008CBCC6 /* CommonStackViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonStackViewTests.swift; sourceTree = "<group>"; };
 		93340EE5244B0581008CBCC6 /* CommonButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButtonTests.swift; sourceTree = "<group>"; };
+		93340EE7244B74F2008CBCC6 /* CommonImageViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonImageViewTests.swift; sourceTree = "<group>"; };
+		93340EE9244B7737008CBCC6 /* DTKitAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DTKitAssets.xcassets; sourceTree = "<group>"; };
 		9367C1A9243FFA49001D4E59 /* DTKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DTKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9367C1AC243FFA49001D4E59 /* DTKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTKit.h; sourceTree = "<group>"; };
 		9367C1AD243FFA49001D4E59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -284,6 +288,7 @@
 				9370A44C24430A5000BB340F /* Modules */,
 				9367C1AC243FFA49001D4E59 /* DTKit.h */,
 				9367C1AD243FFA49001D4E59 /* Info.plist */,
+				93340EE9244B7737008CBCC6 /* DTKitAssets.xcassets */,
 			);
 			path = DTKit;
 			sourceTree = "<group>";
@@ -567,6 +572,7 @@
 				93340EE1244AEFD8008CBCC6 /* CommonControlTests.swift */,
 				93340EE3244AF6FC008CBCC6 /* CommonStackViewTests.swift */,
 				93340EE5244B0581008CBCC6 /* CommonButtonTests.swift */,
+				93340EE7244B74F2008CBCC6 /* CommonImageViewTests.swift */,
 			);
 			path = DTCommon;
 			sourceTree = "<group>";
@@ -709,6 +715,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9367C1F1243FFE87001D4E59 /* DTKit.podspec in Resources */,
+				93340EEA244B7737008CBCC6 /* DTKitAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,6 +829,7 @@
 				93340EE4244AF6FC008CBCC6 /* CommonStackViewTests.swift in Sources */,
 				93B475F2244A262F00880F0F /* ContainedViewTests.swift in Sources */,
 				93340EE6244B0581008CBCC6 /* CommonButtonTests.swift in Sources */,
+				93340EE8244B74F2008CBCC6 /* CommonImageViewTests.swift in Sources */,
 				9367C1B8243FFA4A001D4E59 /* DTKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
