@@ -12,12 +12,21 @@ public typealias CommonTapHandler = (CommonControl) -> Void
 
 open class CommonControl: UIControl {
 
-    private var tapHandler: CommonTapHandler?
+    // MARK: Private Properties
+
+    private(set) var touchUpInsideAction = #selector(onTouchUpInsideSelector)
+    private(set) var touchDownAction = #selector(onTouchDownSelector)
+    private(set) var tapHandler: CommonTapHandler?
+
+    // MARK: Custom Constructors
 
     public init(tapHandler: @escaping CommonTapHandler) {
         self.tapHandler = tapHandler
         super.init(frame: .zero)
+        commonInit()
     }
+
+    // MARK: Overridden Constructors
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,24 +36,45 @@ open class CommonControl: UIControl {
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
-        addTarget(self, action: #selector(onTouchUpInsideSelector), for: .touchUpInside)
-        addTarget(self, action: #selector(onTouchDownSelector), for: .touchDown)
     }
 
+    // MARK: CommonInit - Setup
+
+    open func commonInit() {
+        addTarget(
+            self,
+            action: touchUpInsideAction,
+            for: .touchUpInside
+        )
+        addTarget(
+            self,
+            action: touchDownAction,
+            for: .touchDown
+        )
+    }
+
+
+    // MARK: Selectors
+
+    /// Called when the UIControl.Event touchUpInside is triggered.
     @objc private func onTouchUpInsideSelector() {
         onTouchUpInside()
     }
 
-    @objc private func onTouchDownSelector() {
+    /// Called when the UIControl.Event touchDown is triggered.
+    @objc func onTouchDownSelector() {
         onTouchDown()
     }
 
-    open func commonInit() { }
+    // MARK: Open Methods
 
-    open func onTouchUpInside() { }
-
-    open func onTouchDown() {
+    /// Called when UIControl.Event touchUpInside is triggered.
+    /// This method also calls the tapHandler
+    open func onTouchUpInside() {
         tapHandler?(self)
     }
+
+    /// Called when UIControl.Event touchDown is triggered.
+    open func onTouchDown() { }
 
 }

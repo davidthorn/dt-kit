@@ -12,7 +12,25 @@
 		<key>DTKitExample.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>DTKitTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>9367C1A8243FFA49001D4E59</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9367C1B1243FFA4A001D4E59</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

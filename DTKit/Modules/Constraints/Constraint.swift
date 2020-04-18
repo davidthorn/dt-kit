@@ -193,9 +193,10 @@ public extension UIView {
     }
 
     @discardableResult
-    func height(constant: CGFloat) -> NSLayoutConstraint {
+    func height(constant: CGFloat, identifier: String? = nil) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
         let constraint = heightAnchor.constraint(equalToConstant: constant)
+        constraint.identifier = identifier
         NSLayoutConstraint.activate([
             constraint
         ])
