@@ -221,16 +221,19 @@ public extension CommonButton {
 public extension UIButton {
 
     /// Returns a CommonButton as a system button with commonButtonType as common
-    static let common: CommonButton = CommonButton(type: .system)
+    static let common: CommonButton = .init(buttonType: .common)
 
     /// Returns a CommonButton as a system button with commonButtonType as primary
-    static let primary: CommonButton = CommonPrimaryButton(type: .system)
+    static let primary: CommonButton = .init(buttonType: .primary)
 
     /// Returns a CommonButton as a system button with commonButtonType as secondary
-    static let secondary: CommonButton = CommonSecondaryButton(type: .system)
+    static let secondary: CommonButton = .init(buttonType: .secondary)
 
     /// Returns a CommonButton as a system button with commonButtonType as disabled
-    static let disabled: CommonButton = CommonDisabledButton(type: .system)
+    static let disabled: CommonButton = .init(buttonType: .disabled)
+
+    /// Returns a CommonButton as a system button with commonButtonType as destructive
+    static let destructive: CommonButton = .init(buttonType: .destructive)
 
 }
 
