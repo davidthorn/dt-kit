@@ -8,45 +8,15 @@
 
 import UIKit
 
+/// A completion handler that is called when a button has been tapped.
 public typealias ButtonTapHandler = (CommonButton) -> Void
 
+/// A button that should be used throughout the application instead of using a UIButton.
 open class CommonButton: UIButton {
 
-    public static let common: CommonButton = CommonButton(type: .system)
-    public static let primary: CommonButton = CommonPrimaryButton(type: .system)
-    public static let secondary: CommonButton = CommonSecondaryButton(type: .system)
-    public static let disabled: CommonButton = CommonDisabledButton(type: .system)
-
-    /// Creates a Common Button with the state of common.
-    /// - Parameter tapHandler: The handler that is called on inTouchInside
-    public static func common(tapHandler: @escaping ButtonTapHandler) -> CommonButton {
-        button(tapHandler: tapHandler, type: .common)
-    }
-
-    /// Creates a Common Button with the state of primary.
-    /// - Parameter tapHandler: The handler that is called on inTouchInside
-    public static func primary(tapHandler: @escaping ButtonTapHandler) -> CommonButton {
-        button(tapHandler: tapHandler, type: .primary)
-    }
-
-    /// Creates a Common Button with the state of second.
-    /// - Parameter tapHandler: The handler that is called on inTouchInside
-    public static func secondary(tapHandler: @escaping ButtonTapHandler) -> CommonButton {
-        button(tapHandler: tapHandler, type: .secondary)
-    }
-
-    /// Creates a Common Button with the state of disabled.
-    /// - Parameter tapHandler: The handler that is called on inTouchInside
-    public static func disabled(tapHandler: @escaping ButtonTapHandler) -> CommonButton {
-        button(tapHandler: tapHandler, type: .disabled)
-    }
+    // MARK: Public Properties
 
     public var positiveState: CommonButtonType = .common
-
-    /// Should apply the positive state property to the commonButtonType
-    public func applyPositiveState() {
-        commonButtonType = positiveState
-    }
 
     public var commonButtonType: CommonButtonType = .common {
         didSet {
@@ -54,31 +24,36 @@ open class CommonButton: UIButton {
         }
     }
 
-    private var onTapHandler: ButtonTapHandler?
-    private var defaultBackgroundColor: UIColor?
-    private var defaultTitleColor: UIColor?
+    // MARK: Private Properties
 
-    /// Creates a Custom Common Button
-    /// - Parameters:
-    ///   - tapHandler: The handler that is called on onTouchInside
-    ///   - type: The type of custom button
-    private static func button(tapHandler: @escaping ButtonTapHandler, type: CommonButtonType) -> CommonButton {
-        let button =  CommonButton(type: .system)
-        button.commonButtonType = type
-        button.onTap(handler: tapHandler)
-        return button
-    }
+    private(set) var onTapHandler: ButtonTapHandler?
+    private(set) var defaultBackgroundColor: UIColor?
+    private(set) var defaultTitleColor: UIColor?
+    private(set) var handleTouchDownAction = #selector(handleTouchDownEvent)
+    private(set) var handleTouchUpAction = #selector(handleTouchUpEvent)
+
+    // MARK: Common Init & Setup
 
     open func commonInit() {
-        height(constant: 44)
-        addTarget(self, action: #selector(handleTouchDownEvent), for: .touchDown)
-        addTarget(self, action: #selector(handleTouchUpEvent), for: .touchUpInside)
+        height(constant: CommonButton.defaultHeight)
+        addTarget(
+            self,
+            action: handleTouchDownAction,
+            for: .touchDown
+        )
+        addTarget(
+            self,
+            action: handleTouchUpAction,
+            for: .touchUpInside
+        )
         applyThemeing()
     }
 
+    // MARK: Selector Methods
+
     @objc private func handleTouchDownEvent() {
         backgroundColor = defaultBackgroundColor?.withAlphaComponent(0.6)
-        setTitleColor(UIColor.black, for: .normal)
+        setTitleColor(CommonButton.defaultTouchDownTitleColor, for: .normal)
     }
 
     @objc private func handleTouchUpEvent() {
@@ -90,6 +65,8 @@ open class CommonButton: UIButton {
         onTapHandler?(self)
     }
 
+    // MARK: Overridden Constructors
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -100,17 +77,27 @@ open class CommonButton: UIButton {
         commonInit()
     }
 
+    // MARK: Lifecyle Methods
+
     override public func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = 5
+
+        layer.cornerRadius = CommonButton.defaultCornerRadius
         switch commonButtonType {
         case .common:
-            layer.borderColor = UIColor.systemGray.cgColor
-            layer.borderWidth = 1
+            layer.borderColor = CommonButton.defaultBorderColor.cgColor
+            layer.borderWidth = CommonButton.defaultBorderWidth
         default:
             layer.borderColor = UIColor.clear.cgColor
             layer.borderWidth = 0
         }
+    }
+
+    // MARK: Apply Theming & State
+
+    /// Should apply the positive state property to the commonButtonType
+    public func applyPositiveState() {
+        commonButtonType = positiveState
     }
 
     private func applyThemeing() {
@@ -119,32 +106,159 @@ open class CommonButton: UIButton {
         switch commonButtonType {
         case .disabled:
             controlState = .disabled
-            defaultTitleColor = UIColor.darkGray
-            defaultBackgroundColor = UIColor.lightGray
+            defaultTitleColor = CommonButton.defaultDisabledTitleColor
+            defaultBackgroundColor = CommonButton.defaultDisabledBackgroundColor
         case .secondary:
-            defaultTitleColor = UIColor.white
-            defaultBackgroundColor = UIColor.systemPurple
+            defaultTitleColor = CommonButton.defaultSecondaryTitleColor
+            defaultBackgroundColor = CommonButton.defaultSecondaryBackgroundColor
         case .primary:
-            defaultTitleColor = UIColor.white
-            defaultBackgroundColor = UIColor.systemBlue
+            defaultTitleColor = CommonButton.defaultPrimaryTitleColor
+            defaultBackgroundColor = CommonButton.defaultPrimaryBackgroundColor
         case .common:
-            defaultTitleColor = UIColor.darkGray
-            defaultBackgroundColor = UIColor.white
+            defaultTitleColor = CommonButton.defaultCommonTitleColor
+            defaultBackgroundColor = CommonButton.defaultCommonBackgroundColor
         case .destructive:
-            defaultTitleColor = UIColor.white
-            defaultBackgroundColor = UIColor.systemRed
+            defaultTitleColor = CommonButton.defaultDestructiveTitleColor
+            defaultBackgroundColor =  CommonButton.defaultDestructiveBackgroundColor
         }
 
         isEnabled = commonButtonType != .disabled
-
         backgroundColor = defaultBackgroundColor
         setTitleColor(defaultTitleColor, for: controlState)
     }
 
+}
+
+// MARK: CommonButton Default Properties
+
+public extension CommonButton {
+
+    /// The default width used for the views border width
+    static let defaultBorderWidth: CGFloat = 1
+
+    /// The default color used for the views border color
+    static let defaultBorderColor: UIColor = .systemGray
+
+    /// The default radius used for the views corner radius
+    static let defaultCornerRadius: CGFloat = 5
+
+    /// The default height for all common buttons.
+    static let defaultHeight: CGFloat = 44
+
+}
+
+// MARK: Default CommonButton Title Colors
+
+public extension CommonButton {
+
+    /// The default title color used for during the touchDown method is being called.
+    static let defaultTouchDownTitleColor: UIColor = .black
+
+    /// The default title color used for the commonButtonType of .common
+    static let defaultCommonTitleColor: UIColor = .darkGray
+
+    /// The default title color used for the commonButtonType of .disabled
+    static let defaultDisabledTitleColor: UIColor = .darkGray
+
+    /// The default title color used for the commonButtonType of .secondary
+    static let defaultSecondaryTitleColor: UIColor = .white
+
+    /// The default title color used for the commonButtonType of .primary
+    static let defaultPrimaryTitleColor: UIColor = .white
+
+    /// The default title color used for the commonButtonType of .destructive
+    static let defaultDestructiveTitleColor: UIColor = .white
+
+}
+
+// MARK: Default CommonButton Background Colors
+
+public extension CommonButton {
+
+    /// The default background color used for the commonButtonType of .common
+    static let defaultCommonBackgroundColor: UIColor = .white
+
+     /// The default background color used for the commonButtonType of .disabled
+    static let defaultDisabledBackgroundColor: UIColor = .darkGray
+
+    /// The default background color used for the commonButtonType of .secondary
+    static let defaultSecondaryBackgroundColor: UIColor = .systemPurple
+
+    /// The default background color used for the commonButtonType of .primary
+    static let defaultPrimaryBackgroundColor: UIColor = .systemBlue
+
+     /// The default background color used for the commonButtonType of .destructive
+    static let defaultDestructiveBackgroundColor: UIColor = .systemRed
+
+}
+
+// MARK: Public Extension Methods
+
+public extension CommonButton {
+
     /// Registers a tap handler to be trigger upon the onTouchInside control event is fired.
     /// - Parameter handler: The handle that will be called.
-    public func onTap(handler: @escaping ButtonTapHandler) {
+    func onTap(handler: @escaping ButtonTapHandler) {
         onTapHandler = handler
+    }
+
+}
+
+// MARK: Static Helper Properties
+
+public extension UIButton {
+
+    /// Returns a CommonButton as a system button with commonButtonType as common
+    static let common: CommonButton = CommonButton(type: .system)
+
+    /// Returns a CommonButton as a system button with commonButtonType as primary
+    static let primary: CommonButton = CommonPrimaryButton(type: .system)
+
+    /// Returns a CommonButton as a system button with commonButtonType as secondary
+    static let secondary: CommonButton = CommonSecondaryButton(type: .system)
+
+    /// Returns a CommonButton as a system button with commonButtonType as disabled
+    static let disabled: CommonButton = CommonDisabledButton(type: .system)
+
+}
+
+// MARK: Static Helper Methods
+
+public extension UIButton {
+
+    /// Creates a Common Button with the state of common.
+    /// - Parameter tapHandler: The handler that is called on inTouchInside
+    static func common(tapHandler: @escaping ButtonTapHandler) -> CommonButton {
+        button(tapHandler: tapHandler, type: .common)
+    }
+
+    /// Creates a Common Button with the state of primary.
+    /// - Parameter tapHandler: The handler that is called on inTouchInside
+    static func primary(tapHandler: @escaping ButtonTapHandler) -> CommonButton {
+        button(tapHandler: tapHandler, type: .primary)
+    }
+
+    /// Creates a Common Button with the state of second.
+    /// - Parameter tapHandler: The handler that is called on inTouchInside
+    static func secondary(tapHandler: @escaping ButtonTapHandler) -> CommonButton {
+        button(tapHandler: tapHandler, type: .secondary)
+    }
+
+    /// Creates a Common Button with the state of disabled.
+    /// - Parameter tapHandler: The handler that is called on inTouchInside
+    static func disabled(tapHandler: @escaping ButtonTapHandler) -> CommonButton {
+        button(tapHandler: tapHandler, type: .disabled)
+    }
+
+    /// Creates a Custom Common Button
+    /// - Parameters:
+    ///   - tapHandler: The handler that is called on onTouchInside
+    ///   - type: The type of custom button
+    private static func button(tapHandler: @escaping ButtonTapHandler, type: CommonButtonType) -> CommonButton {
+        let button =  CommonButton(type: .system)
+        button.commonButtonType = type
+        button.onTap(handler: tapHandler)
+        return button
     }
 
 }
