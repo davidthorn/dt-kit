@@ -20,6 +20,11 @@ open class CommonView: UIView {
         commonInit()
     }
 
+    /// Method is called in all constructors.
+    /// all worked should be carried out in this method prior to being added to a view.
     open func commonInit() { }
+
+    /// Returns an instance of a CommonView
+    public static let common: CommonView = .init()
 
 }

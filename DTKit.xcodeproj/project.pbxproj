@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93340EE0244AEC72008CBCC6 /* CommonViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93340EDF244AEC72008CBCC6 /* CommonViewTests.swift */; };
 		9367C1B3243FFA4A001D4E59 /* DTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9367C1A9243FFA49001D4E59 /* DTKit.framework */; };
 		9367C1B8243FFA4A001D4E59 /* DTKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367C1B7243FFA4A001D4E59 /* DTKitTests.swift */; };
 		9367C1BA243FFA4A001D4E59 /* DTKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9367C1AC243FFA49001D4E59 /* DTKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -131,6 +132,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		93340EDF244AEC72008CBCC6 /* CommonViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewTests.swift; sourceTree = "<group>"; };
 		9367C1A9243FFA49001D4E59 /* DTKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DTKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9367C1AC243FFA49001D4E59 /* DTKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTKit.h; sourceTree = "<group>"; };
 		9367C1AD243FFA49001D4E59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -567,6 +569,7 @@
 			isa = PBXGroup;
 			children = (
 				93B475F1244A262F00880F0F /* ContainedViewTests.swift */,
+				93340EDF244AEC72008CBCC6 /* CommonViewTests.swift */,
 			);
 			path = DTCommon;
 			sourceTree = "<group>";
@@ -821,6 +824,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93340EE0244AEC72008CBCC6 /* CommonViewTests.swift in Sources */,
 				93B475F2244A262F00880F0F /* ContainedViewTests.swift in Sources */,
 				9367C1B8243FFA4A001D4E59 /* DTKitTests.swift in Sources */,
 			);
