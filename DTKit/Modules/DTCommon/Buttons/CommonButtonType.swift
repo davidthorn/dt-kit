@@ -6,12 +6,13 @@
 //  Copyright © 2020 Thorn, David. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-public enum CommonButtonType {
+public enum CommonButtonType: Hashable {
     case primary
     case secondary
     case disabled
     case common
     case destructive
+    case custom(UIColor, UIColor)
 }

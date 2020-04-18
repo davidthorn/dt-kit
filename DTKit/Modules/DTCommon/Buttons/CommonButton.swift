@@ -67,6 +67,14 @@ open class CommonButton: UIButton {
 
     // MARK: Overridden Constructors
 
+    /// Custom constructor
+    /// - Parameter buttonType: The button type used to apply theming
+    public init(buttonType: CommonButtonType) {
+        self.commonButtonType = buttonType
+        super.init(frame: .zero)
+        commonInit()
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -77,7 +85,7 @@ open class CommonButton: UIButton {
         commonInit()
     }
 
-    // MARK: Lifecyle Methods
+    // MARK: Lifecycle Methods
 
     override public func layoutSubviews() {
         super.layoutSubviews()
@@ -120,10 +128,14 @@ open class CommonButton: UIButton {
         case .destructive:
             defaultTitleColor = CommonButton.defaultDestructiveTitleColor
             defaultBackgroundColor =  CommonButton.defaultDestructiveBackgroundColor
+        case .custom(let color, let titleColor):
+            defaultTitleColor = titleColor
+            defaultBackgroundColor =  color
         }
 
         isEnabled = commonButtonType != .disabled
         backgroundColor = defaultBackgroundColor
+        assert(backgroundColor == defaultBackgroundColor)
         setTitleColor(defaultTitleColor, for: controlState)
     }
 
@@ -182,13 +194,13 @@ public extension CommonButton {
     static let defaultDisabledBackgroundColor: UIColor = .darkGray
 
     /// The default background color used for the commonButtonType of .secondary
-    static let defaultSecondaryBackgroundColor: UIColor = .systemPurple
+    static let defaultSecondaryBackgroundColor: UIColor = .purple
 
     /// The default background color used for the commonButtonType of .primary
-    static let defaultPrimaryBackgroundColor: UIColor = .systemBlue
+    static let defaultPrimaryBackgroundColor: UIColor = .blue
 
      /// The default background color used for the commonButtonType of .destructive
-    static let defaultDestructiveBackgroundColor: UIColor = .systemRed
+    static let defaultDestructiveBackgroundColor: UIColor = .red
 
 }
 
@@ -248,6 +260,12 @@ public extension UIButton {
     /// - Parameter tapHandler: The handler that is called on inTouchInside
     static func disabled(tapHandler: @escaping ButtonTapHandler) -> CommonButton {
         button(tapHandler: tapHandler, type: .disabled)
+    }
+
+    /// Creates a Common Button with the state of destructive.
+    /// - Parameter tapHandler: The handler that is called on inTouchInside
+    static func destructive(tapHandler: @escaping ButtonTapHandler) -> CommonButton {
+        button(tapHandler: tapHandler, type: .destructive)
     }
 
     /// Creates a Custom Common Button
